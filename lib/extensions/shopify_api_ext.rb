@@ -135,6 +135,10 @@ module ShopifyAPI
     def product
       @product ||= Product.lookup(product_id)
     end
+    
+    def fulfilled?
+      fulfillment_status == 'fulfilled'
+    end
   end       
 
 
