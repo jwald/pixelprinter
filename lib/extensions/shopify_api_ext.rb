@@ -78,7 +78,7 @@ module ShopifyAPI
         'tax_price'         => to_cents(total_tax),
         'tax_lines'         => tax_lines,
         'shipping_price'    => shipping_line && to_cents(shipping_line.price),
-        'shipping_address'  => shipping_address, 
+        'shipping_address'  => defined?(shipping_address) && shipping_address,
         'billing_address'   => billing_address, 
         'line_items'        => line_items,
         'fulfilled_line_items' => fulfilled,
