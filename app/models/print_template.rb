@@ -1,3 +1,5 @@
+require 'rexml/document'
+
 class PrintTemplate < ActiveRecord::Base
   belongs_to :shop
   has_many :versions, :class_name => 'PrintTemplateVersion', :dependent => :delete_all, :order => 'version DESC'
@@ -37,7 +39,6 @@ class PrintTemplate < ActiveRecord::Base
     end
     return false, rexml_msg
   rescue RuntimeError => e
-    puts "runtime errrrrorrr"
     return false, e.message
   rescue Liquid::SyntaxError
     return false, e
