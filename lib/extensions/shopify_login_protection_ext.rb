@@ -10,6 +10,7 @@ module ShopifyLoginProtection
 
     ActiveResource::Base.site = session[:shopify].site
     ShopifyAPI::Shop.cached = Rails.cache.fetch("shops/#{session[:shopify].url}", :expires_in => 5.minutes) { session[:shopify].shop }
+    set_timezone
     yield
   ensure
     ActiveResource::Base.site = nil
@@ -23,5 +24,10 @@ module ShopifyLoginProtection
     return false if params[:shop].blank?
 
     params[:shop] != session[:shopify].url && "#{params[:shop]}.myshopify.com" != session[:shopify].url
+  end
+  
+  def set_timezone
+    # deal with ill formatted timezone string currently provided by Shopify
+    Time.zone = ShopifyAPI::Shop.cached.timezone.gsub(/\(.+\) |amp;/, '')
   end
 end

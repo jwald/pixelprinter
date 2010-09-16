@@ -66,7 +66,7 @@ module ShopifyAPI
       shop = Shop.cached
       { 
         'id'                => id,
-        'created_at'        => created_at,
+        'created_at'        => created_at.in_time_zone,
         'name'              => name, 
         'email'             => email,
         'gateway'           => gateway,
