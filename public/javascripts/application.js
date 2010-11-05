@@ -68,6 +68,13 @@ Templates = function() {
 	  $('html,body').animate({scrollTop: targetOffset - 50}, 500);
 	};
 	
+  var sendPrintNotification = function() {
+    $.ajax({
+      url: 	'/orders/' + _order + '/print',
+      data: $("#selected-templates").serialize(),
+      type: 'post'
+    });
+  };
 	
 	/* public methods */
 	return {
@@ -99,14 +106,11 @@ Templates = function() {
 			toggleInlinePreview(template);
 		},
 		
-		print: function() {
-			$.ajax({
-	      url: 	'/orders/' + _order + '/print',
-				data: $("#selected-templates").serialize(),
-	      type: 'post'
-	    });
-			window.print();
-		},
+    print: function() {
+      // Workaround for Chrome as it won't execute the print statement right after the AJAX call if invoked directly
+      sendPrintNotification();
+      window.print();
+    },
 
 		select: function(template, selection) {
 			var checkbox = $('#template-item-' + template + " :checkbox");
