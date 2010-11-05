@@ -108,7 +108,7 @@ Templates = function() {
 		
     print: function() {
       // Workaround for Chrome as it won't execute the print statement right after the AJAX call if invoked directly
-      sendPrintNotification();
+      setTimeout(sendPrintNotification, 0);
       window.print();
     },
 
