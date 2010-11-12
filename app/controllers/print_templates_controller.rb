@@ -15,6 +15,8 @@ class PrintTemplatesController < ApplicationController
     # Not used at the moment (see orders/show)
     @tmpl  = shop.templates.find(params[:id])
     @order = ShopifyAPI::Order.find(params[:order_id])
+    @rendered_template = @tmpl.render(@order.to_liquid)
+    render :action => 'show', :layout => false
   end
 
   

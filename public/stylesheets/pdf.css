@@ -1,0 +1,31 @@
+body {
+  background: #fff !important;
+  font-family: helvetica, arial, serif;
+}
+
+/* HIDE ELEMENTS */
+#sidebar, .preview-top, #notice-item-wrapper {
+	display: none;
+}
+
+form {
+	display: none;
+}
+
+
+#cc-logo {
+  margin-bottom: 0.5em;
+}
+
+#preview {padding-bottom:70px; clear:both;zoom:1;} /* the preview element has inline css for order-index */
+#preview .preview-top {
+  background: transparent !important;
+  margin: 45px 0 0 0;
+}
+#preview .preview-wrapper {
+  background: transparent !important;
+  width: 711px;
+  float: none !important;
+}
+#preview .preview-content { margin:-40px 0 0 0; padding:40px 40px 0 40px; clear:both;}
+#preview  .preview-bottom {background:url('../images/paper-bottom.png') no-repeat; width:712px; height:70px; margin-bottom:12px; float:right;} 

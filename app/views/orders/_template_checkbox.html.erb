@@ -5,5 +5,6 @@
   </span>
 
   <%= check_box_tag 'print_templates[]', tmpl.id, tmpl.default, :id => "template-checkbox-#{tmpl.id}", :onclick => "Templates.updateSelection($(this));" %>
-  <%= label_tag "template-checkbox-#{tmpl.id}", tmpl.name %>
+  <%= label_tag "template-checkbox-#{tmpl.id}", tmpl.name %> |
+  <%= link_to "pdf", order_print_template_path(@order, tmpl, :format => 'pdf'), :class => "pdf-link", :target => "pdf" %>
 </li>

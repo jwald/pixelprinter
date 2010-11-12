@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <title><%= APP_NAME %></title>
+  
+  <%= stylesheet_link_tag 'application', 'pdf' %>
+  
+  <!--[if IE 7]>
+	  <%= stylesheet_link_tag 'ie7-fixes', :media => 'screen' %>
+	<![endif]-->
+  
+  <!--[if IE]>
+    <%= javascript_include_tag 'ie-fixes' %> 
+	<![endif]-->   
+</head>
+	
+<body>
+  <div id="preview" class="clearfix">
+    <div id="inline-preview-<%= @tmpl.id %>">
+
+      <div class="preview-wrapper">
+        <div class="preview-content">
+          <%= @rendered_template %>        
+        </div>
+      </div> <!-- preview-wrapper -->
+
+    </div>
+  </div>
+
+</body>
+</html>
