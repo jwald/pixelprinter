@@ -16,5 +16,5 @@ form {
 
 /* Always print each template on a new page */  
 .preview-content {
-	page-break-after: always;
+	page-break-after: auto;
 }
