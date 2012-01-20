@@ -90,6 +90,8 @@ module ShopifyAPI
         'customer'          => {'email' => email, 'name' => billing_address.name},
         'shop'              => shop.to_liquid,
         'total_discounts'   => to_cents(total_discounts),
+        'financial_status'  => financial_status,
+        'fulfillment_status' => fulfillment_status,
         'payment_details'   => payment_details,
         'credit_card'       => payment_details  # keep credit_card for legacy reasons because it was named like that intially on the shopify side
       }
