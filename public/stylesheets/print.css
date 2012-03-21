@@ -1,6 +1,6 @@
 body {font-family: helvetica, arial, serif;}
 /* HIDE ELEMENTS */
-#sidebar, .preview-top, #notice-item-wrapper, #flashnotices, #flasherrors {
+#sidebar, .preview-top, #notice-item-wrapper, #flashnotice, #flashnotices, #flasherrors {
 	display: none;
 }
 
