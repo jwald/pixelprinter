@@ -93,7 +93,10 @@ module ShopifyAPI
         'financial_status'  => financial_status,
         'fulfillment_status' => fulfillment_status,
         'payment_details'   => payment_details,
-        'credit_card'       => payment_details  # keep credit_card for legacy reasons because it was named like that intially on the shopify side
+        'credit_card'       => payment_details,  # keep credit_card for legacy reasons because it was named like that intially on the shopify side
+        'discounts'         => discounts,
+        'discounts_savings' => discounts.first.try(:savings),
+        'discounts_amount'  => discounts.first.try(:amount)
       }
     end    
     
@@ -119,8 +122,29 @@ module ShopifyAPI
       details = attributes['payment_details']
       {'number' => details && details.credit_card_number, 'company' => details && details.credit_card_company}
     end
+
+    def discounts
+      discount_codes.map do |discount_code|
+        Discount.new(discount_code.attributes)
+      end
+    end
+
+    class Discount < Base
+      def savings
+        amount.to_f * -1
+      end
+
+      def to_liquid
+        {
+          'amount' => amount.to_f,
+          'savings' => savings,
+          'code' => code,
+          'title' => code
+        }
+      end
+    end
   end
-  
+
   class LineItem < Base
     include PriceConversion
 

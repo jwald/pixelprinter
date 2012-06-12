@@ -22,6 +22,12 @@
     <td>Subtotal price:</td>
     <td>{{ subtotal_price | money }}</td>
   </tr>
+  {% for discount in discounts %}
+  <tr>
+    <td>Includes discount "{{ discount.code }}"</td>
+    <td>{{ discount.savings | money }}</td>
+  </tr>
+  {% endfor %}
   <tr>
     <td>Total tax:</td>
     <td>{{ tax_price | money }}</td>
