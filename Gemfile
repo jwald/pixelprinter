@@ -1,10 +1,13 @@
 source :gemcutter
 
-gem "rails",     "2.3.8"
-gem "memcached", "0.18.0"
+gem "rails", "2.3.11"
 
+group :production do
+  gem "memcached", "0.18.0"
+end
 
 group :development do
+  gem "mysql"
   gem "mongrel"
 end
 
