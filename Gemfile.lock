@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Shopify/liquid.git
+  revision: 6ebdded8f220010a1ca3431089793ec00140530e
+  ref: 6ebdded
+  specs:
+    liquid (2.3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -16,7 +23,6 @@ GEM
     daemons (1.1.8)
     fastthread (1.0.7)
     gem_plugin (0.2.3)
-    liquid (2.3.0)
     memcached (0.18.0)
     mocha (0.9.8)
       rake
@@ -41,7 +47,7 @@ PLATFORMS
 
 DEPENDENCIES
   context
-  liquid (= 2.3.0)
+  liquid (= 2.3.0)!
   memcached (= 0.18.0)
   mocha
   mongrel
