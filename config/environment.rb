@@ -44,6 +44,7 @@ Rails::Initializer.run do |config|
   
 end
 
+require 'liquid'
 require 'memcached'
 require 'extensions/string_ext'
 require 'extensions/shopify_api_ext'
