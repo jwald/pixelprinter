@@ -95,8 +95,8 @@ module ShopifyAPI
         'payment_details'   => payment_details,
         'credit_card'       => payment_details,  # keep credit_card for legacy reasons because it was named like that intially on the shopify side
         'discounts'         => discounts,
-        'discounts_savings' => discounts.first.try(:savings),
-        'discounts_amount'  => discounts.first.try(:amount)
+        'discounts_savings' => discounts.present? && discounts.first.savings,
+        'discounts_amount'  => discounts.present? && discounts.first.amount
       }
     end    
     
@@ -124,6 +124,8 @@ module ShopifyAPI
     end
 
     def discounts
+      return nil if discount_codes.empty?
+
       discount_codes.map do |discount_code|
         Discount.new(discount_code.attributes)
       end
