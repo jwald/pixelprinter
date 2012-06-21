@@ -48,6 +48,12 @@ module ShopifyAPI
     include OrderCalculations
     include PriceConversion
     
+    def self.lookup(id)
+      Rails.cache.fetch("orders/#{id}", :expires_in => 1.hour) do
+        find(id)
+      end
+    end
+
     def shipping_line
       case shipping_lines.size
       when 0
@@ -131,6 +137,12 @@ module ShopifyAPI
       end
     end
 
+    def line_items
+      items = super
+      items.each{ |item| item.order_id = self.id }
+      items
+    end
+
     class Discount < Base
       def savings
         amount.to_f * -1
@@ -162,7 +174,8 @@ module ShopifyAPI
         'vendor'     => vendor,
         'variant_id' => variant_id,
         'variant'    => lambda { variant },
-        'product'    => lambda { product }        
+        'product'    => lambda { product },
+        'fulfillment'=> lambda { last_successful_fulfillment }
       }
     end
     
@@ -174,8 +187,21 @@ module ShopifyAPI
       @product ||= Product.lookup(product_id)
     end
     
+    def order
+      @order   ||= Order.lookup(order_id)
+    end
+
     def fulfilled?
       fulfillment_status == 'fulfilled'
+    end
+
+    def last_successful_fulfillment
+      @fulfillment ||= begin
+        sorted_fulfillments = order.fulfillments.sort{|a, b| b.created_at <=> a.created_at}
+        sorted_fulfillments.find do |fulfillment|
+          fulfillment.line_items.any?{|item| item.variant_id == self.variant_id }
+        end
+      end
     end
   end       
 
@@ -266,6 +292,17 @@ module ShopifyAPI
      end
    end  
   
+  class Fulfillment < Base
+    def to_liquid
+      {
+        'tracking_number'   => tracking_number,
+        'tracking_company'  => tracking_company,
+        'created_at'        => created_at
+        #'tracking_url'      => tracking_url
+      }
+    end
+  end
+
   # TODO: remove this, and see if Heroku still can't find ShopifyAPI::Product::Option (it worked locally somehow with adding theclass)
   class Product < Base
     class Option < Base
