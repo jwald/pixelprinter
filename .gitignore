@@ -4,3 +4,4 @@ tmp/**/*
 config/shopify.yml
 db/backup/*
 .bundle
+.rbenv-version
