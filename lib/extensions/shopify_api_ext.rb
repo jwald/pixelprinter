@@ -144,14 +144,16 @@ module ShopifyAPI
     end
 
     class Discount < Base
+      include PriceConversion
+
       def savings
         amount.to_f * -1
       end
 
       def to_liquid
         {
-          'amount' => amount.to_f,
-          'savings' => savings,
+          'amount' => to_cents(amount),
+          'savings' => to_cents(savings),
           'code' => code,
           'title' => code
         }
