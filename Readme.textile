@@ -14,7 +14,7 @@ When you visit the PixelPrinter application for the first time, it will show thr
 
 The Invoice template is already selected per default. Notice how you see a live preview of every selected template in the center part:
 
-!http://blog.shopify.com/assets/2009/6/1/Pixel_Printer_overview_halfsize.png!
+!http://wiki.shopify.com/upload/a/a3/Pixel_Printer_overview.jpg!
 
 To print all selected templates just click that big green button on the left! This will open the print dialog of your operating system from where you can either directly print the templates or save them to PDF (see below).
 
@@ -24,12 +24,12 @@ To start editing the templates click the *edit* button in the sidebar. This will
 
 PixelPrinter in edit mode:
 
-!http://blog.shopify.com/assets/2009/6/1/Pixel_Printer_editmode_halfsize.png!
+!http://wiki.shopify.com/upload/d/d3/Pixel_Printer_editmode.jpg!
 
 
 After clicking *edit* for a template, a dialog will popup that looks like this:
 
-!http://blog.shopify.com/assets/2009/6/1/Pixel_Printer_editing_halfsize.png!
+!http://wiki.shopify.com/upload/7/7e/Pixel_Printer_editing.jpg!
 
 h3. Saving as PDF
 
@@ -47,7 +47,7 @@ Just like any other Shopify application, PixelPrinter will be activated through 
 
 The PixelPrinter application will add a link to the sidebar of an order's details page in the Shopify admin interface. Clicking that link will take you directly to the order print preview screen in PixelPrinter:
 
-!http://blog.shopify.com/assets/2009/6/2/ShopifyAdmin-OrderDetailsText-halfsize.png!
+!http://wiki.shopify.com/upload/6/64/ShopifyAdmin-OrderDetailsText.png!
 
 
 
