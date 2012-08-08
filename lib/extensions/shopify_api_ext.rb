@@ -126,7 +126,14 @@ module ShopifyAPI
     
     def payment_details
       details = attributes['payment_details']
-      {'number' => details && details.credit_card_number, 'company' => details && details.credit_card_company}
+      number  = details && details.credit_card_number
+      company = details && details.credit_card_company
+      {
+        'number' => number,
+        'credit_card_number' => number,
+        'company' => company,
+        'credit_card_company' => company
+      }
     end
 
     def discounts
