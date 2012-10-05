@@ -146,7 +146,9 @@ module ShopifyAPI
 
     def line_items
       items = super
-      items.each{ |item| item.order_id = self.id }
+      items.each do |item|
+        item.order_id = self.id
+      end
       items
     end
 
@@ -184,7 +186,8 @@ module ShopifyAPI
         'variant_id' => variant_id,
         'variant'    => lambda { variant },
         'product'    => lambda { product },
-        'fulfillment'=> lambda { last_successful_fulfillment }
+        'fulfillment'=> lambda { last_successful_fulfillment },
+        'properties' => line_item_properties
       }
     end
     
@@ -210,6 +213,14 @@ module ShopifyAPI
         sorted_fulfillments.find do |fulfillment|
           fulfillment.line_items.any?{|item| item.variant_id == self.variant_id }
         end
+      end
+    end
+
+    def line_item_properties
+      return properties if properties.first.is_a?(Array)
+
+      properties.map do |properties_array|
+        [properties_array.name, properties_array.value]
       end
     end
   end       
