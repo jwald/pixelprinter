@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  config.gem 'memcached'
+  #config.gem 'memcached'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -38,14 +38,14 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-  config.action_view.field_error_proc = Proc.new do |html_tag, instance|
-    "<span class=\"fieldWithErrors\">#{html_tag}</span>"
-  end
+  # config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+  #   "<span class=\"fieldWithErrors\">#{html_tag}</span>"
+  # end
   
 end
 
-require 'liquid'
-require 'memcached'
+#require 'liquid'
+#require 'memcached'
 require 'extensions/string_ext'
 require 'extensions/shopify_api_ext'
 require 'extensions/shopify_login_protection_ext'
