@@ -8,7 +8,7 @@ group :production do
 end
 
 group :development do
-  gem "mysql"
+   gem "mysql"
 #  gem "mongrel"
 end
 
