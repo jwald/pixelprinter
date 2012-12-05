@@ -1,4 +1,4 @@
-module PrintTemplateHelper
+module PrintTemplatesHelper
   def rollback_link(template_name)
     link_to_remote "Older revisions&hellip;", {
         :url => { 

@@ -41,4 +41,3 @@ DEPENDENCIES
   mocha
   mysql
   rails (= 2.3.11)
-  rake (= 0.8.7)

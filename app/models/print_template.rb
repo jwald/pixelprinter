@@ -54,7 +54,7 @@ class PrintTemplate < ActiveRecord::Base
   end
   
   def version_numbers
-    @version_numbers ||= versions.find(:all, :select => [ "version" ], :order => 'version DESC').collect(&:version)
+    @version_numbers ||= versions.find(:all, :select => "version", :order => 'version DESC').collect(&:version)
   end
 
   def rollback(version)
