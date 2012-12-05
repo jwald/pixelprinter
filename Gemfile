@@ -1,19 +1,18 @@
 source :gemcutter
 
-gem "rails", "2.3.11"
-gem 'liquid', '2.3.0', :git => 'git://github.com/Shopify/liquid.git', :ref => '6ebdded', :require => 'liquid'
+gem "rails", "~> 3.2"
+gem 'liquid', :git => 'git://github.com/Shopify/liquid.git', :ref => '05d997', :require => 'liquid'
 
 group :production do
-#  gem "memcached", "0.18.0"
+  gem "memcached", "1.4.1"
 end
 
 group :development do
-   gem "mysql"
-#  gem "mongrel"
+  gem "mysql"
 end
 
 
 group :test do
   gem "mocha"
-  gem "context"
+  gem "context", git: 'git://github.com/jm/context.git'
 end

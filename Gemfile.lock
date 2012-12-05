@@ -1,43 +1,108 @@
 GIT
   remote: git://github.com/Shopify/liquid.git
-  revision: 6ebdded8f220010a1ca3431089793ec00140530e
-  ref: 6ebdded
+  revision: 05d9976e1603eb461294daf1a43564bbd03a6ab0
+  ref: 05d997
   specs:
-    liquid (2.3.0)
+    liquid (2.4.1)
+
+GIT
+  remote: git://github.com/jm/context.git
+  revision: bf5b1ea9be2b7685ef2958e341763b361dc7a6c8
+  specs:
+    context (0.5.5)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (2.3.11)
-      actionpack (= 2.3.11)
-    actionpack (2.3.11)
-      activesupport (= 2.3.11)
-      rack (~> 1.1.0)
-    activerecord (2.3.11)
-      activesupport (= 2.3.11)
-    activeresource (2.3.11)
-      activesupport (= 2.3.11)
-    activesupport (2.3.11)
-    context (0.0.16)
+    actionmailer (3.2.9)
+      actionpack (= 3.2.9)
+      mail (~> 2.4.4)
+    actionpack (3.2.9)
+      activemodel (= 3.2.9)
+      activesupport (= 3.2.9)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.0)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.9)
+      activesupport (= 3.2.9)
+      builder (~> 3.0.0)
+    activerecord (3.2.9)
+      activemodel (= 3.2.9)
+      activesupport (= 3.2.9)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.9)
+      activemodel (= 3.2.9)
+      activesupport (= 3.2.9)
+    activesupport (3.2.9)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    arel (3.0.2)
+    builder (3.0.4)
+    erubis (2.7.0)
+    hike (1.2.1)
+    i18n (0.6.1)
+    journey (1.0.4)
+    json (1.7.5)
+    mail (2.4.4)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    memcached (1.4.1)
+    mime-types (1.19)
     mocha (0.9.8)
       rake
+    multi_json (1.4.0)
     mysql (2.8.1)
-    rack (1.1.3)
-    rails (2.3.11)
-      actionmailer (= 2.3.11)
-      actionpack (= 2.3.11)
-      activerecord (= 2.3.11)
-      activeresource (= 2.3.11)
-      activesupport (= 2.3.11)
-      rake (>= 0.8.3)
+    polyglot (0.3.3)
+    rack (1.4.1)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-ssl (1.3.2)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (3.2.9)
+      actionmailer (= 3.2.9)
+      actionpack (= 3.2.9)
+      activerecord (= 3.2.9)
+      activeresource (= 3.2.9)
+      activesupport (= 3.2.9)
+      bundler (~> 1.0)
+      railties (= 3.2.9)
+    railties (3.2.9)
+      actionpack (= 3.2.9)
+      activesupport (= 3.2.9)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
     rake (0.8.7)
+    rdoc (3.12)
+      json (~> 1.4)
+    sprockets (2.2.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    thor (0.16.0)
+    tilt (1.3.3)
+    treetop (1.4.12)
+      polyglot
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.35)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  context
-  liquid (= 2.3.0)!
+  context!
+  liquid!
+  memcached (= 1.4.1)
   mocha
   mysql
-  rails (= 2.3.11)
+  rails (~> 3.2)
