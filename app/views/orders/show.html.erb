@@ -1,43 +1,46 @@
-<div id="sidebar">
-  <div class="sidebar-block " > <!-- order details -->
-    <h1>Order <%= @order.name %></h1>
-    <p class="customer-name"><%= @order.billing_address.name %> (<%= @order.billing_address.country %>)</p>
-    <p class="order-price">
-      <%= money_with_currency(@order.total_price, true) %>
-      <%= order_status(@order) %>
-    </p>
-    <p><%= link_to "Go back to original order", shopify_order_url(@order), :title => "Open order in Shopify admin interface" %></p> 
-  </div>
+<div class="row">
 
-  <div class="sidebar-block"> <!-- templates -->
-    <h2>Templates</h2>
-    <p class="template-editmode">
-      <%= link_to_function image_tag("button-edit.png", :title => "Edit the templates"), "Templates.toggleEditMode();" %>
-    </p>
-    <% if @tmpls.blank? %>
-      <p>No templates found, you should create a new one.</p>
-    <% else %>
-      <% form_tag({:action => 'print'}, :id => "selected-templates") do %>
-      <ul id="list-templates">
-        <% @tmpls.each do |tmpl| %>
-          <%= render :partial => 'template_checkbox', :locals => {:tmpl => tmpl, :options_hidden => true} %>
+  <div class="span17">
+    <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> <% end %>
+  </div>
+  
+  <div class="span7">
+    <div class="box box-details">
+      <div class="box-header p">
+        <h3>Order details</h3>
+      </div>
+      <div class="box-content">
+        <h1 class="order-details-number">Order <%= @order.name %></h1>
+        <strong><%= @order.billing_address.name %> (<%= @order.billing_address.country %>)</strong>
+        <p class="printer-order-details-price">
+          <%= money_with_currency(@order.total_price, true) %>
+          <%= order_status(@order) %>
+        </p>
+      </div>
+    </div> <!-- box -->
+    
+    <div class="box box-details">
+      <div class="box-header p">
+        <h3>Select documents to print</h3>
+      </div>
+      <div class="box-content">
+        <% if @tmpls.blank? %>
+          <p>No templates found, you should create a new one.</p>
+        <% else %>
+          <% form_tag({:action => 'print'}, :id => "selected-templates") do %>
+          <ul class="printer-list-templates">
+            <% @tmpls.each do |tmpl| %>
+              <%= render :partial => 'template_checkbox', :locals => {:tmpl => tmpl, :options_hidden => true} %>
+            <% end %>
+          </ul>
+          <% end %>
+          <%= link_to_remote '', :url => new_print_template_path, :method => :get, :html => {:class => "new-template", :style => "display: none"} %>
         <% end %>
-      </ul>
-      <% end %>
-      <%= link_to_remote '', :url => new_print_template_path, :method => :get, :html => {:class => "new-template", :style => "display: none"} %>
-    <% end %>
-  </div>
+      </div>
+    </div>
 
-  <div class="sidebar-block clearfix" id="print-button" > <!-- print -->
-    <%= link_to_function image_tag("button-print.png"), "Templates.print()", :style => "margin: 10px 0 0px 0" %>
-    <p style="font-size: 12px; 	text-align: center;"><%= content_tag :span, "0 documents", :id => "template-amount" %> will be printed.</p>
-	</div><!-- last sidebar block -->
-
-	<img src="../images/logo.png"  alt="Logo" class="logo"   />
-</div><!--sidebar-->
-
-<!-- This is populated later via AJAX and popped up with the dialog function of JQueryUI -->
-<div id="modal-dialog"></div>
+  </div> <!-- span7 -->
+</div> <!-- row -->
 
 <!-- Empty Containers in correct order, ready to be filled with AJAX previews -->
 <div id="preview" class="clearfix">

@@ -1,0 +1,41 @@
+@import "variables";
+@import "mixins";
+
+
+/* DROPDOWNS */
+.dropdown { @extend .unstyled; line-height:18px; display:none; position:absolute; top:100%; margin-top:11px; right:0; text-align:left; background:#fff; min-width:180px; border:1px solid #c0c0c0; z-index:199; @include box-shadow($default_box_shadow); @include rounded(3px); font-size:0; white-space:nowrap;
+  &.is-visible { display:block; -webkit-animation: reveal .2s ease-out; -moz-animation: reveal .2s ease-out; animation: reveal .2s ease-out; }
+  &:before { content:image-url('boilerplate/selected-horizontal.png'); position:absolute; right:1px; top:-8px; display:block; width:25px; height:11px; }
+  &.dropdown-padded { padding:10px; }
+  &.position-above { bottom:100%; top:auto; @include box-shadow(none); @include rounded(0px);
+    &:before { content:none; }
+  }
+  &.dashboard-datepicker:before { content:image-url('boilerplate/selected-horizontal.png'); position:absolute; right:13px; top:-12px; display:block; width:25px; height:11px; }
+  h3 { margin:0; padding:4px 10px; font-size:10px; text-transform:uppercase; border-bottom:1px solid #ededed; color:#444; font-weight:400; cursor:default; }
+  ul { margin:5px 0; }
+  ul li { text-transform:none; list-style-type:none; margin:0; padding:0; font-size:12px; font-weight:400; }
+  ul li a { font-weight:400; display:block; padding:4px 10px; @include rounded(0px); text-decoration: none;
+    &:hover { text-decoration:none; color:#fff; background:#479ccf; }
+    &.is-disabled { color:#bbb; pointer-events:none;
+      &:hover { color:#bbb; cursor:default; background:#fff; }
+    }
+  }
+  &.left-aligned { right:auto; left:0px;
+    &:before { content:image-url('boilerplate/selected-horizontal.png'); position:absolute; left:1px; top:-8px; display:block; width:25px; height:11px; }
+  }
+  .break { margin-bottom:5px; padding-bottom:5px; border-bottom:1px solid #E6E6E6; }
+  .break-top { margin-top:5px; padding-top:5px; border-top:1px solid #E6E6E6; }
+  &.filter-dropdown { padding:10px; right:auto; left:0px; margin-top:10px;
+    .filter-heading { font-size:12px; margin-bottom:4px; }
+    .add-filters { font-size:12px; }
+    .active-filters { margin:0; }
+    .filter-builder {
+      select, a, input, span { margin-right:5px; }
+    }
+    &:before { content:image-url('boilerplate/selected-horizontal.png'); position:absolute; left:1px; top:-8px; display:block; width:25px; height:11px; }
+  }
+  &.align-arrow-to-middle:before {
+    left: 50%; right: auto; margin-left: -12px;
+  }
+}
+/* END DROPDOWNS */

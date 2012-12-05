@@ -1,0 +1,17 @@
+/* ======== SECTION: STYLE VARIABLES ======== */
+$icon_sprite: image-url('boilerplate/icon-sprite.png') no-repeat;
+$black_header_height:48px;
+$footer_height:40px;
+$content_header_height:66px;
+$container_width:994px;
+$sidebar_width:178px;
+$page_width: $container_width - $sidebar_width - 20px;
+$outer_page_width: $container_width - $sidebar_width;
+$sidebar_link_height:34px;
+$minimum_content_width:996px;
+$maximum_content_width:1620px;
+$body_bg_color:#5b6870;
+$sidebar_bg_color:#f2f7fa;
+$theme_settings_window_width:340px;
+$default_box_shadow:0px 2px 6px rgba(0,0,0,0.25);
+$body_font:'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -1,14 +1,13 @@
-<div id="inline-preview-<%= tmpl.id %>">
+<div id="printer-inline-preview-<%= tmpl.id %>">
   
   <!-- new preview -->
-  <div class="preview-top" >
-    <div class="template-actions">
-     <img src="/images/button-clip.png" width="68" height="42" alt="Button Clip" class="aesthetic-clip" />
-      <p class="template-name"><strong><em><%= tmpl.name %> &nbsp;</em></strong></p>
+  <div class="printer-preview-top" >
+    <div class="printer-template-actions">
+      <h3 class="heading printer-template-name"><%= tmpl.name %> &nbsp;</h3>
     </div>
   </div>
-  <div class="preview-wrapper">
-    <div class="preview-content">
+  <div class="printer-preview-wrapper">
+    <div class="printer-preview-content">
       <% if safe %>
         <%= sanitize(rendered_template) %>
       <% else %>
@@ -16,6 +15,4 @@
       <% end %>
     </div>
   </div> <!-- preview-wrapper -->
-
-  <div class="preview-bottom"></div>
 </div>

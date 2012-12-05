@@ -1,25 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="MSSmartTagsPreventParsing" content="true" />
 
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/images/adf/favicon.png" />
+  <link rel="apple-touch-startup-image" href="/images/adf/shopify-57.png" />
+  <link rel="apple-touch-icon-precomposed" href="/images/adf/shopify-57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/adf/shopify-72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/adf/shopify-114.png" />
+  
   <title><%= APP_NAME %></title>
   
-  <%= stylesheet_link_tag 'application', 'jquery-ui-1.7.1.custom', :media => 'screen' %>
+  <%= stylesheet_link_tag "adf/framework", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag 'print', :media => 'print' %>
   <%= javascript_include_tag :defaults, 'jquery-ui' %> 
 
-  <!--[if IE 7]>
-	  <%= stylesheet_link_tag 'ie7-fixes', :media => 'screen' %>
-	<![endif]-->
-  
-  <!--[if IE]>
-    <%= javascript_include_tag 'ie-fixes' %> 
-	<![endif]-->
-   
   <% javascript_tag do %>
     <% if flash[:notice] %> window.onload = function() { Messenger.notice(<%= h(flash[:notice]).inspect %>); } <% end %>
     <% if flash[:error] %>  window.onload = function() { Messenger.error(<%= h(flash[:error]).inspect %>); }   <% end %>
@@ -32,23 +31,36 @@
 	
 <body>
 
-
-	
-	<div id="wrapper">
-		<div id="container">
-      <%= @content_for_layout %> 
-      
-      <!-- status message (growl-like) -->
-      <div id="notice-item-wrapper" style="display: none">
-        <div id="progressbar"></div>
-      </div>
-      
-    </div> <!-- container -->
-    
-    <!-- Flash error & notice-->
+  <%= render 'common/header' %>
+  
+  <div id="global-notification">
     <div id="flashnotice" style="display:none;"></div>
-    <div id="flasherrors" style="display:none;"></div>
-  </div><!-- wrapper -->
+    <div id="flasherrors" style="display:none;"></div>    
+  </div>
+  
+  <div class="wrapper">
+    <div id="body" class="clearfix">
+      <div id="content">
+        <section id="facebook-store">
+          <div>
+            <div id="facebook-store-config" class="page">
+              <div class="header-row">
+                  <div class="span24">
+                    <header>
+                      <h1 class="header-main">PixelPrinter</h1>
+                      <div class="header-right">
+                        <a href="#"><%= link_to_function "Print", "Templates.print()", :class => "btn primary tooltip", :style => "margin: 10px 0 0px 0" %></a>
+                      <div>
+                    </header>
+                  </div>
+                </div>
+              <%= @content_for_layout %>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
   
 </body>
 </html>

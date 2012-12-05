@@ -1,0 +1,44 @@
+@import "admin2/utility";
+@import "admin2/variables";
+@import "admin2/mixins";
+@import "admin2/base";
+@import "admin2/btn";
+@import "admin2/img";
+@import "admin2/layout";
+@import "admin2/tables";
+@import "admin2/forms";
+@import "admin2/section";
+@import "admin2/table_filter";
+@import "admin2/modal";
+@import "admin2/dropdown";
+@import "admin2/flags"; /* country flags */
+@import "admin2/taggable"; /* taggable module for tag pills */
+@import "admin2/box"; /* message boxes */
+@import "admin2/tooltip";
+@import "admin2/placeholder";
+@import "admin2/fonts";
+@import "admin2/icon";
+@import "admin2/rte";
+@import "admin2/timeline";
+@import "admin2/gravatar";
+@import "admin2/global_search";
+@import "admin2/search_widget";
+@import "admin2/themes";
+@import "admin2/fluid_container";
+@import "admin2/admin2";
+
+// Remove padding for sidebar
+#content {
+  padding: 86px 0 60px 0;
+}
+
+// Show Back to Admin button
+.back-to-admin {
+  top: 0;
+}
+
+// Width of header-row
+#content div.page .header-row {
+  padding-left: 0; margin: 0;
+  max-width: $maximum_content_width - 20;
+}

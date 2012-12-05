@@ -1,0 +1,104 @@
+@import "variables";
+@import "mixins";
+
+/*
+ BASE STYLES
+ */
+
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src: font-url('proximanova-light-webfont.eot');
+    src: font-url('proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('proximanova-light-webfont.woff') format('woff'),
+         font-url('proximanova-light-webfont.ttf') format('truetype'),
+         font-url('proximanova-light-webfont.svg#ProximaNovaLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: font-url('proximanova-reg-webfont.eot');
+    src: font-url('proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('proximanova-reg-webfont.woff') format('woff'),
+         font-url('proximanova-reg-webfont.ttf') format('truetype'),
+         font-url('proximanova-reg-webfont.svg#ProximaNovaLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@-webkit-keyframes reveal {
+  0% { margin-left: -999px; opacity:0; }
+  1% { margin-left: 0; opacity:0; -webkit-transform: scale(.98) translateY(-15px); }
+  80% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: translateY(0); }
+}
+
+@-moz-keyframes reveal {
+  0% { margin-left: -999px; opacity:0; }
+  1% { margin-left: 0; opacity:0; -moz-transform: scale(.98) translateY(-15px); }
+  80% { -moz-transform: scale(1); }
+  100% { -moz-transform: translateY(0); }
+}
+
+/* ======== SECTION: BASE STYLES ======== */
+
+
+
+html,body { height:100%; margin:0; padding:0; border:0; background:$body_bg_color image-url('adf/bg.png') repeat fixed; }
+html { font-size:62.5%; -webkit-touch-callout:none; }
+body { line-height:18px; font-size:13px; color:#444; font-family:$body_font; }
+
+/* HTML5 set to display:block; */
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section { display:block; }
+
+p { margin:0; }
+img { max-width:100%; }
+code { display:block; background:#FEE9CC; @include rounded; padding:1px 3px; }
+fieldset { border:0; margin:0; padding:0 0 20px 0; }
+legend { display:block; width:auto; border-bottom:1px solid #e6e6e6; background:#f0f0f0; color:#000; padding:4px; margin:0 0 12px; font-size:13px; font-weight:700; }
+hr { color:#e6e6e6; background-color:#e6e6e6; height:1px; margin:0 0 10px 0; padding:0; border:0; }
+small { color:#999; font-size:11px; }
+address { font-style: normal; }
+del { text-decoration: line-through;}
+
+/* ======== END SECTION: BASE STYLES ======== */
+
+/* 2.1. Headings */
+h1 { font-size:26px; line-height: 1 }
+h2 { font-size:18px; }
+h3 { font-size:13px; }
+h4 { font-size:13px; }
+h5 { font-size:14px; }
+h6 { font-size:13px; }
+
+h1,h2,h3,h4,h5,h6 { color:#000; margin:0; }
+
+/* 2.2 LINKS */
+
+a { text-decoration:none; color:#3084ca;
+  &:hover { color:#3a9ef0; text-decoration:underline; }
+  &:hover section { text-decoration:none; }
+  &.plain { color:#666; text-decoration:underline;
+    &:hover { color:#888; }
+  }
+}
+
+
+/* 2.7. Lists */
+ul, ol { margin-left:10px; padding:0;
+  &.unstyled { margin:0; }
+  &.unstyled > li { list-style:none; }
+  &.horizontal { @extend .clearfix;
+    > li { display:block; float:left; }
+  }
+}
+
+dt { font-weight:700; }
+dd { margin-left:10px; }
+ul { list-style:disc outside none; }
+ol { list-style:decimal outside none; }
+li { margin:0; }
+
+

@@ -36,7 +36,7 @@ Templates = function() {
 
 	var toggleInlinePreview = function(template) {
 		// preview div, which could be already inserted (cached in DOM)
-		var templatePreview = $("#inline-preview-" + template);
+		var templatePreview = $("#printer-inline-preview-" + template);
 		// is template selected?
 		if (_templates.indexOf(template) > -1) {
 			if (templatePreview.length > 0) {

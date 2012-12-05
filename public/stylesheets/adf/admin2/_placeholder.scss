@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+
+/* PLACEHOLDER UTILITY */
+div.placeholder { position:relative; height:30px;
+  label, input[type=text], input[type=email] { @include box-sizing; display:block; top:0; margin:0; padding:8px 10px 5px 29px; line-height:20px; height:32px; font-size:14px; font-weight:400; }
+  label { z-index:10; color:#000; border:1px solid #fff; padding-top:0; padding-bottom:0; }
+  input[type=text], input[type=email] { z-index:20; background-color:rgba(255,255,255,0); @include transition(background-color, 0.15s);
+    &:focus { background-color:rgba(255,255,255,0.8); }
+  }
+  .clear-filter { display:block; cursor:text; position:absolute; opacity:0.8; right:0; top:0; z-index:30; width:30px; height:30px; background:url(image-path('admin2/resources/clear-filter.png')) no-repeat 32px -21px; text-indent:-99999px; @include transition(background-position);
+    &:hover { opacity:1.0; }
+  }
+  &.notEmpty {
+    .clear-filter { cursor:pointer; background-position:50% -21px; }
+    input[type=text], input[type=email] { background-color:#fff; }
+  }
+}
+/* END PLACEHOLDER UTILITY */
+

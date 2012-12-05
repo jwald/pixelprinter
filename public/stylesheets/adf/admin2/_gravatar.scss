@@ -1,0 +1,15 @@
+.gravatar {
+  width:40px;
+  height:40px; /* explicit height and width because of no-gravatar image sizing */
+  border: 1px solid #CCC;
+  margin: 0 5px;
+
+  .ico-btn & { margin: 0; @include border-radius(2px,0,0,2px); border: 0; border-right: solid 1px #ddd; display: inline-block; vertical-align: middle; }
+}
+
+.gravatar-small {
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+

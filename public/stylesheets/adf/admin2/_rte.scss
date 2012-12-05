@@ -1,0 +1,67 @@
+/**
+ * Rich Text Editor 
+ **/
+
+
+.wysihtml5-sandbox, .wysihtml5-plainview { height: 200px; border:1px solid #ddd; margin:0; @include box-sizing; }
+.wysihtml5-sandbox { position:absolute; z-index: 199; margin-left:13px; 
+  &.is-focused { border-color:#4c90ee; }
+}
+#wysihtml5-editor { margin:0; padding:0;
+  > div { position:relative; }
+}
+.wysihtml5-plainview { font-family: monospace; margin-bottom:5px; }
+.rte-viewtoggle { float:right; font-weight:700; font-size:11px; }
+.rte-compose-toolbar { display:inline; }
+.wysihtml5-toolbar { background:#fafafa; border:1px solid #ddd; border-bottom:none; }
+
+/* when the textarea has an error, show that on the iframe, too */
+.wysihtml5-plainview.error ~ .wysihtml5-sandbox { border-color:#cc4c3f; }
+
+.ico-rte { width: 12px; height: 12px; background: url(image-path('admin2/resources/icon-sprite-rte.png')) 0 0 no-repeat; text-indent: 100%; white-space:nowrap; overflow:hidden; }
+.ico-rte-format { margin: 0 5px 0 0; background-position: 0 0; }
+.ico-rte-bold { background-position: -12px 0; }
+.ico-rte-italic { background-position: -24px 0; }
+.ico-rte-unordered { background-position: -36px 0; }
+.ico-rte-ordered { background-position: -48px 0; }
+.ico-rte-indent { background-position: -60px 0; }
+.ico-rte-outdent { background-position: -72px 0; }
+.ico-rte-link { background-position: -84px 0; }
+.ico-rte-source { background-position: -156px 0; }
+.ico-rte-alignleft { background-position: -120px 0; }
+.ico-rte-aligncenter { background-position: -132px 0; }
+.ico-rte-image { background-position: -108px 0; }
+.ico-rte-table { background-position: -168px 0; }
+.ico-rte-rowbelow { background-position: -180px 0; }
+.ico-rte-rowabove { background-position: -192px 0; }
+.ico-rte-colright { background-position: -204px 0; }
+.ico-rte-colleft { background-position: -216px 0; }
+
+.ico-rte-delrow { background-position: -228px 0; }
+.ico-rte-delcol { background-position: -240px 0; }
+.ico-rte-deltable { background-position: -252px 0; }
+
+.rtetools {
+    @extend .clearfix;
+    padding: 6px 6px 5px 6px; 
+}
+.rtetools-buttons {
+    display: inline; 
+}
+.rtepanel { 
+    overflow: hidden;
+    padding: 5px;
+    border-top: 1px solid #CCC;
+    background-color: #EEE;
+}
+
+.rtepanel-bd {
+    float: left;
+    width: 80%;
+}
+
+.rtepanel > footer {
+    float: right;
+    width: 18%;
+    text-align: right;
+}

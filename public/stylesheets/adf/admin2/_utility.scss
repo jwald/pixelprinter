@@ -1,0 +1,69 @@
+.block { display:block !important; }
+.inline { display:inline !important; }
+.table { display:table!important;}
+.table-cell { display:table-cell!important;}
+.hide { display:none !important; }
+
+.divider { margin-bottom:20px !important; padding-bottom:20px !important; border-bottom:1px solid #e6e6e6 !important; }
+.divider-slim { margin-bottom:10px !important; padding-bottom:10px !important; border-bottom:1px solid #e6e6e6 !important; }
+.divider-top { margin-top:20px !important; padding-top:20px !important; border-top:1px solid #e6e6e6 !important; }
+.divider-top-slim { margin-top:10px !important; padding-top:10px !important; border-top:1px solid #e6e6e6 !important; }
+
+.s-none { margin:0 !important; }
+.s { margin:10px !important; }
+.ss { margin:20px !important; }
+.st { margin-top:10px !important; }
+.sst { margin-top:20px !important; }
+.sr { margin-right:10px !important; }
+.ssr { margin-right:20px !important; }
+.sb { margin-bottom:10px !important; }
+.ssb { margin-bottom:15px !important; }
+.sl { margin-left:10px !important; }
+.ssl { margin-left:20px !important; }
+
+.p-none { padding:0 !important; }
+.p { padding:10px !important; }
+.pp { padding:20px !important; }
+.pt { padding-top:10px !important; }
+.ppt { padding-top:20px !important; }
+.pr { padding-right:10px !important; }
+.ppr { padding-right:20px !important; }
+.pb { padding-bottom:10px !important; }
+.ppb { padding-bottom:20px !important; }
+.pl { padding-left:10px !important; }
+.ppl { padding-left:20px !important; }
+
+.p-rel { position:relative !important; }
+.p-abs { position:absolute !important; }
+.p-fix { position:fixed !important; }
+
+.w-auto { width:auto !important; }
+
+.fr { float:right !important; }
+.fl { float:left !important; }
+.fn { float:none !important; }
+
+.tr { text-align:right !important; }
+.tl { text-align:left !important; }
+.tc { text-align:center !important; }
+
+.wait { cursor:wait !important; }
+.drag { cursor:move !important; }
+.pointer { cursor:pointer !important; }
+
+.va-t { vertical-align:top !important; }
+.va-m { vertical-align:middle !important; }
+.va-b { vertical-align:bottom !important; }
+
+.lh-match-input { line-height:28px; }
+
+.relative { position: relative; }
+.fixed { position:fixed !important; }
+.dashed { border:1px dashed #ccc; }
+
+.updated { background:#f3eab5; color:#ce6416; }
+.underline { text-decoration:underline; }
+
+.option-1 { color:#75a630 !important; }
+.option-2 { color:#c1873c !important; }
+.option-3 { color:#425a91 !important; }

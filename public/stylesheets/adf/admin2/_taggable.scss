@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+/* TAGABBLE */
+ul.taggable { cursor:text !important; padding:2px 4px; border:1px solid #ccc; @include rounded(1px);
+  input { margin:2px; height:22px; line-height:22px; padding:2px; display:inline !important; border:none !important; padding:0 !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important; width:130px; }
+  &:focus, &.focus { border:1px solid #4c90ee; }
+  .tagit-new { display:inline; }
+  .tagit-choice { border:1px solid rgba(0, 0, 0, 0.2); color:#fff; display:inline; font-size:12px !important; display:inline-block; margin:2px 5px 2px 0px !important; padding:1px 7px 1px 7px !important; @include rounded(2px);
+    .tagit-close { color:#fff; cursor:pointer; padding:5px 3px 5px 6px; font-size:12px; text-decoration:none; }
+    &.remove { opacity:0.85; border-style:dashed; border-color:#aaa; color:#666; background:#f0f0f0 !important;
+      .tagit-close { color:#666; }
+    }
+  }
+  &.option-1 .tagit-choice { background:#97bd66; }
+  &.option-2 .tagit-choice { background:#e49059; }
+  &.option-3 .tagit-choice { background:#69a8db; }
+  &.tags .tagit-choice { position:relative; border:1px solid #cbdbee; background:#e9f3ff; color:#647f9e; padding:1px 7px !important;
+    .tagit-close { color:#306490; }
+    &.remove { background:url(image-path('admin2/resources/tags.png')) 100% -42px !important; color:#666;
+      .tagit-close { color:#666; }
+    }
+    &.remove:before { content:''; display:block; position:absolute; background:url(image-path('admin2/resources/tags.png')) 0px -42px; left:-4px; top:0; width:4px; height:22px; }
+  }
+}
+/* END TAGGABLE */
+

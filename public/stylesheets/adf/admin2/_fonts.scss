@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+
+/* 3.6. Font Sizing */
+.note { font-weight:400; font-size:12px; color:#666; text-transform:none;
+  &.subdued { color:#aaa; }
+}
+.subdued { color:#888; }
+.x-large { font-size:18px; line-height:22px; }
+.xx-large { font-size:20px; line-height: 24px; }
+.large { font-size:16px; line-height: 22px; }
+.small { font-size:12px; }
+.x-small { font-size:11px; }
+
+/* 3.9. Font Weight */
+.fw-normal { font-weight:400 !important; }
+.fw-strong { font-weight:700 !important; }
+
+.light { font-family: 'ProximaNovaLight', 'helvetica neue', Helvetica, Arial, sans-serif; font-weight: 300; }
+
+.description {
+  p { margin-bottom:8px; }
+}

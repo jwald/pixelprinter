@@ -1,0 +1,39 @@
+/* Global search */
+.global-search { display:block; float:right; max-width:280px; width:280px;
+  &.is-active { background:#333; }
+  &.is-focused {
+    .global-search-input { outline:none; background-color:#fff; color:#000; border:none; padding-right:32px;
+      &:hover { cursor:text; background-position:-2px -962px; }
+    }
+  }
+  &.is-focused.is-searching {
+    .global-search-input { background: image-url('boilerplate/icon-sprite.png') no-repeat -2px -962px; background: image-url('boilerplate/icon-sprite.png'), image-url('boilerplate/spinner.gif'); background-position:-2px -962px, 226px 45%; background-repeat:no-repeat; background-color:#fff; }
+  }
+  .selected-result { background:#f0f0f0;
+    a { color:#333; }
+  }
+  a:focus { outline:none; }
+}
+.global-search-form { line-height:$black_header_height; position:relative; padding:0 15px; }
+.global-search-input { width:100%; font-size:12.5px; @include transition(background-color, 0.15s); position:relative; top:-1px; background:#3a3a3a image-url('boilerplate/icon-sprite.png'); background-position:-2px -962px; background-repeat:no-repeat; padding:4px 10px 4px 32px; vertical-align:middle; z-index:60; border:none; border-right:1px solid #222; color:#818280; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; @include rounded(14px); }
+.global-search-input-clear { opacity:0.8; position:absolute; z-index:70; top:9px; right:14px; width:30px; height:30px; text-indent:-9999px; background:image-url('boilerplate/clear-filter.png') no-repeat 45% -21px;
+  &:hover { opacity:1; }
+}
+.global-search-results { background:#fff; border:1px solid #ccc; border-top:none; overflow:hidden; @include box-shadow($default_box_shadow); }
+.global-search-results-summary { background:#f6f6f6; text-align:center; border-top:1px solid #f0f0f0;
+  a, p { font-size:12px; display:block; height:36px; line-height:36px; color:#666; }
+}
+.global-search-results-item { position:relative;
+  h3 { display:block; position:absolute; border-top:1px solid #f2f2f2; left:3px; top:-1px; width:40px; height:40px; text-indent:-9999px; background:$icon_sprite; }
+  ul { margin:0; padding:10px 0; background:#fff; border-bottom:1px solid #f2f2f2; }
+  li { display:block; padding-left:40px; }
+  a { display:block; line-height:24px; padding:0 5px; }
+}
+.global-search-results-item-product h3 { background-position:0 -154px; }
+.global-search-results-item-order h3 { background-position:0 -52px; }
+.global-search-results-item-customer h3 { background-position:0 -105px; }
+.global-search-results-item-custom_collection h3, .global-search-results-item-smart_collection h3 { background-position:0 -203px; }
+.global-search-results-item-page h3 { background-position:0 -2459px; }
+.global-search-results-item-blog h3, .global-search-results-item-article h3 { background-position:0 -252px; }
+.global-search-results-item-links h3 { background-position:0 -306px; }
+.global-search-results-item-discounts h3 { background-position:0 -355px; }

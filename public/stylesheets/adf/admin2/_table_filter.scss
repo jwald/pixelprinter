@@ -1,0 +1,9 @@
+.obj-filter { position:relative; margin-bottom:20px;
+  .obj-filter-container-btn { display:table-cell;}
+  .obj-filter-container-text { display:table-cell; width:100%;  }
+  .obj-filter-btn, .obj-filter-text { display:block; float:left;  }
+  .obj-filter-btn { @include border-radius(3px,0px,0px,3px); border-right:none; white-space:nowrap; }
+  .obj-filter-text { @include border-radius(0px,3px,3px,0px); width:100%; height:32px; padding-left:28px; background:$icon_sprite -4px -960px; }
+}
+.filters-list { margin:0 0 5px 0; position:relative; }
+.obj-filter + .filters-list { top:-10px; }

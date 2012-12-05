@@ -1,0 +1,5 @@
+.fluid-container { display:table;
+  .fixed-container { display:table-cell; white-space:nowrap }
+  .variable-container { display:table-cell; width:100%; }
+  .fluid-object { display:block; float:left; }
+}

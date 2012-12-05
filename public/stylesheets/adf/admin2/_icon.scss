@@ -1,0 +1,262 @@
+@import "variables";
+@import "mixins";
+
+/* TEXT ICONS */
+p.icon { padding:3px 0 8px 28px; background:$icon_sprite; border-bottom: solid 1px #f4f4f4; margin: 0 0 8px 0;
+  &:last-child, &.last { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  &.expanded { margin:3px 0; }
+  &.email { background-position:-10px -1512px; }
+  &.phone { background-position:-10px -1564px; }
+  &.marketing { background-position:-10px -1614px; }
+  &.payment { background-position:-10px -1661px; }
+  &.shipping { background-position:-10px -1763px; }
+  &.success { background-position:-10px -1713px; }
+  &.warning { background-position:-10px -1814px; }
+  &.landing-page { background-position:-10px -1864px; }
+  &.referring-website { background-position:-10px -1914px; }
+  &.payment-gateway { background-position:-10px -2014px; }
+  &.incomplete { background-position:-10px -1964px; }
+  &.fulfillment { background-position:-12px -2064px; }
+
+  &.visibility { background-position:-5px -2413px; padding-left:35px; }
+
+  &.orders { background-position:-10px -2213px; }
+  &.account { background-position:-10px -2164px; }
+  &.location { background-position:-10px -2250px; }
+
+  &.plus { background-position:-10px -1065px; }
+
+  &.right-arrow { background-position:-10px -2364px; }
+
+  &.success.fulfillment, &.incomplete.fulfillment { padding-left:12px; }
+
+  &.main-theme { background-position:-7px -2617px; }
+  &.mobile-theme { background-position:-4px -2667px; }
+  &.unpublished-theme { background-position:-100px -2706px; }
+}
+/* END TEXT ICONS */
+
+/* MISC icons */
+.delete-icon, .next-icon, .prev-icon, .page-next, .page-prev, .list-view, .grid-view { display:block; text-indent:-9999px; background:$icon_sprite; height:30px; width:30px; }
+.delete-icon { background-position:50% -2110px; width:13px; }
+.next-icon { background-position:-12px -1259px; width:16px; }
+.prev-icon { background-position:-12px -1309px; width:16px; }
+.page-prev { background-position:-12px -1359px; width:16px; }
+.page-next { background-position:-12px -1410px; width:16px; }
+.disabled .page-prev, .disabled .page-next, .disabled .next-icon, .disabled .prev-icon { opacity: 0.5 }
+.dropdown-icon { display:block; background:$icon_sprite; height:30px; padding-right:13px; background-position:100% -1460px; }
+.btn.slim {
+  .page-prev { background-position:-12px -1361px; }
+  .page-next { background-position:-12px -1412px; }
+  &.disabled {
+    .dropdown-icon-only { background-position:100% -1463px; }
+  }
+  .delete-icon { background-position:51% -2112px; width:9px; }
+  .dropdown-icon { background-position:100% -1462px; }
+  .next-icon { background-position:-12px -1261px; }
+  .prev-icon { background-position:-12px -1311px; }
+}
+.dropdown-icon-only { display:block; text-indent:-9999px; background:$icon_sprite; height:30px; padding-right:7px; background-position:100% -3510px;
+  &.slim { background-position:100% -3512px; }
+}
+/* END MISC icons */
+
+.ico { display: inline-block; line-height: 0; vertical-align: top; text-indent:999em; white-space:nowrap; overflow:hidden; }
+
+.ico-20 { width:20px; height:20px; background:image-url('adf/main-header-icons.png') 0 0 no-repeat; }
+.ico-20-loading { background:image-url('adf/loading-small.gif') 2px 2px no-repeat; }
+.ico-20-dashboard { background-position:0 0; }
+.ico-20-orders { background-position:-20px 0; }
+.ico-20-customers { background-position:-40px 0; }
+.ico-20-discounts { background-position:-60px 0; }
+.ico-20-products { background-position:-80px 0; }
+.ico-20-collections { background-position:0 -20px; }
+.ico-20-blogs { background-position:-20px -20px; }
+.ico-20-pages { background-position:-40px -20px; }
+.ico-20-links { background-position:-60px -20px; }
+.ico-20-themes { background-position:-80px -20px; }
+.ico-20-apps { background-position:0 -40px; }
+.ico-20-settings { background-position:-20px -40px; }
+.ico-20-checkout { background-position:-40px -40px; }
+.ico-20-shipping { background-position:-60px -40px; }
+.ico-20-taxes { background-position:-80px -40px; }
+.ico-20-notifications { background-position:0 -60px; }
+.ico-20-domains { background-position:-20px -60px; }
+.ico-20-account { background-position:-40px -60px; }
+.ico-20-shopify { background-position:-60px -60px; }
+.ico-20-search { background-position:-80px -60px; }
+
+.ico-72 { width: 72px; height: 72px; background: image-url('adf/ico-sprite-large.png') 0 0 no-repeat;
+  &.ico-orders { background-position: -72px 0; }
+  &.ico-products { background-position: -144px 0; }
+  &.ico-customers { background-position: -288px 0; }
+  &.ico-collections { background-position: -72px -72px; }
+  &.ico-apps { background-position: 0 -72px; }
+  &.ico-promotions { background-position: -144px -72px; }
+  &.ico-articles { background-position: 0 -144px; }
+  &.ico-tell-friends { background-position: -144px -144px; }
+}
+
+.ico-36 { width: 36px; height: 36px; background: image-url('adf/ico-sprite-large.png') 0 0 no-repeat;
+  &.ico-warning { background-position: -324px -72px; }
+  &.ico-expiring { background-position: -324px -144px; }
+  &.ico-success { background-position: -324px -108px; margin-top: 2px; }
+  &.ico-saderror { background-position: -324px -180px; }
+  &.ico-conv-addtocart { background-position: -396px -108px; }
+  &.ico-conv-reachedco { background-position: -396px -144px; }
+  &.ico-conv-purchased { background-position: -396px -180px; }
+  &.ico-search { background-position: -360px -144px; }
+  &.ico-twitter {  background-position: -360px 0;}
+  &.ico-facebook { background-position: -360px -36px;}
+  &.ico-google {   background-position: -396px 0; }
+  &.ico-yahoo {    background-position: -396px -36px; }
+  &.ico-bing {     background-position: -396px -72px; }
+  &.ico-ask {      background-position: -360px -72px; }
+  &.ico-aol {      background-position: -360px -108px; }
+  &.ico-baidu {    background-position: -360px -180px; }
+
+  &.ico-marketing-apps { background-position: -288px -72px; }
+  &.ico-marketing-google{ background-position: -288px -108px; }
+  &.ico-marketing-marketplace { background-position: -288px -144px; }
+  &.ico-marketing-stats { background-position: -288px -180px; }
+
+  &.no-bg { background: none; }
+}
+.ico-16x8 { width: 8px; height: 16px; background-repeat: no-repeat; background-image: image-url('adf/ico-sprite-small.png'); }
+
+.ico-16 { width: 16px; height: 16px; background-repeat: no-repeat; background-image: image-url('adf/ico-sprite-small.png');
+  &.ico-loading { background: image-url('adf/loading-small.gif') 0 0; }
+  &.ico-view-storefront { background-position:0 -273px; }
+  &.ico-back-to-admin {   background-position:-32px -273px; }
+  &.ico-product   {       background-position: 0 -16px; }
+  &.ico-discount  {       background-position: 0 -32px; }
+  &.ico-page {            background-position: 0 -48px; }
+  &.ico-blog,
+  &.ico-article {         background-position: 0 -64px;  }
+  &.ico-comment {         background-position: 0 -112px; }
+  &.ico-error {           background-position: 0 -128px; }
+  &.ico-combobox     {    background-position: 0 -161px; }
+  &.ico-fetchmore    {    background-position: 0 -176px; }
+  &.ico-customer-phone {  background-position: 0 -208px; }
+  &.ico-customer-notes {  background-position: -16px -240px; }
+  &.ico-customer-tags {   background-position: -32px -240px; }
+  &.ico-loyalty {         background-position: 0 -224px; }
+  &.ico-account {         background-position: 0 -240px; }
+  &.ico-rect-warning {    background-position: 0 -256px; }
+  &.ico-rect-note    {    background-position: -16px -256px; }
+  &.type-webhook_subscription { background-position: 0 }
+
+  &.ico-setting      {    background-position: -16px 0; }
+  &.ico-milestone    {    background-position: -16px -16px;  }
+  &.ico-achievement  {    background-position: -16px -32px;  }
+  &.ico-announcement {    background-position: -16px -48px;  }
+  &.ico-calendar     {    background-position: -16px -64px;  }
+  &.ico-collection   {    background-position:     0 -144px; }
+  &.ico-med-grey-x   {    background-position: -16px -160px; }
+  &.ico-auth-expiry  {    background-position: -16px -175px; }
+  &.ico-customer-email {  background-position: -16px -208px; }
+  &.ico-marketing    {    background-position: -16px -224px; }
+  &.ico-remove { background-position: -48px -16px; }
+
+  // Order History:
+  &.ico-timeline {  background-position: -32px 0; } // default icon (empty)
+
+  &.ico-mail_sent { background-position: -32px -16px; }
+  &.ico-re_opened { background-position: -32px -32px; }
+  &.ico-placed    { background-position: -32px -48px; }
+  &.ico-closed    { background-position: -32px -64px; }
+  &.ico-cancelled { background-position: -32px -80px; }
+  &.ico-confirmed { background-position: -32px -96px; }
+
+  &.ico-risky        { background-position: -48px -48px; }
+  &.ico-not-risky    { background-position: -48px -64px; }
+
+  &.type-recurring_application_charge,
+  &.ico-authorization_success,
+  &.ico-authorization_failure,
+  &.ico-authorization_pending { background-position: -32px -112px; }
+
+  &.ico-capture_success,
+  &.ico-capture_failure,
+  &.ico-capture_pending,
+  &.ico-sale_success,
+  &.ico-sale_failure,
+  &.ico-sale_pending { background-position: -32px -128px; }
+
+  &.ico-void_success,
+  &.ico-void_failure,
+  &.ico-void_pending { background-position: -32px -160px; }
+
+  &.ico-refund_success,
+  &.ico-refund_failure,
+  &.ico-refund_pending { background-position: -32px -176px; }
+
+  &.ico-fulfillment_success,
+  &.ico-fulfillment_failure,
+  &.ico-fulfillment_pending,
+  &.ico-fulfillment_cancelled { background-position: -32px -192px; }
+  &.ico-restock_line_items { background-position: -32px -208px; }
+
+  &.ico-fulfilled-success { background-position: -32px -224px; }
+
+  // Tell a Friend:
+  &.ico-twitter { background-position: -64px 0; vertical-align: text-top; margin-right: 6px; }
+  &.ico-googleplus { background-position: -64px -16px; vertical-align: text-top; margin-right: 6px; }
+  &.ico-fb { background-position: -64px -32px; vertical-align: text-top; margin-right: 6px; }
+
+}
+.ico-sidebar { width: 16px; height: 16px; margin-right:10px; background: image-url('adf/sidebar-icon-sprite-compact.png') -16px 0 no-repeat;
+  &.ico-dashboard   { background-position:0 0;}
+  &.ico-orders      { background-position:0 -16px;}
+  &.ico-customers   { background-position:0 -32px;}
+  &.ico-discounts   { background-position:0 -48px;}
+
+  &.ico-products    { background-position:0 -64px;}
+  &.ico-collections { background-position:0 -80px;}
+  &.ico-blogs       { background-position:0 -96px;}
+  &.ico-pages       { background-position:0 -112px;}
+  &.ico-links       { background-position:0 -128px;}
+
+  &.ico-themes      { background-position:0 -144px;}
+  &.ico-apps        { background-position:0 -160px;}
+  &.ico-settings    { background-position:0 -176px;}
+}
+.selected .ico-sidebar {
+  &.ico-dashboard   { background-position:-16px 0;}
+  &.ico-orders      { background-position:-16px -16px;}
+  &.ico-customers   { background-position:-16px -32px;}
+  &.ico-discounts   { background-position:-16px -48px;}
+
+  &.ico-products    { background-position:-16px -64px;}
+  &.ico-collections { background-position:-16px -80px;}
+  &.ico-blogs       { background-position:-16px -96px;}
+  &.ico-pages       { background-position:-16px -112px;}
+  &.ico-links       { background-position:-16px -128px;}
+
+  &.ico-themes      { background-position:-16px -144px;}
+  &.ico-apps        { background-position:-16px -160px;}
+  &.ico-settings    { background-position:-16px -176px;}
+}
+
+.ico-disclosure { background: image-url('adf/icon-sprite.png') 50% -417px; }
+.ico-payment-mini{ width: 23px; height: 14px; background: image-url('adf/ico-payments.png') 0 0 no-repeat;
+  &.ico-visa { background-position: 0 -14px; }
+  &.ico-mastercard { background-position: 0 -28px; }
+  &.ico-bogus { background-position: 0 -42px; }
+  &.ico-american-express { background-position: 0 -56px; }
+}
+.ico-payment{ width: 38px; height: 23px; background: image-url('adf/ico-payments.png') -23px 0 no-repeat;
+  &.ico-visa { background-position: -23px -23px; }
+  &.ico-mastercard { background-position: -23px -46px; }
+  &.ico-bogus { background-position: -23px -69px; }
+  &.ico-american-express { background-position: -23px -92px; }
+}
+.ico-theme-settings, .ico-template-editor { display:inline-block; width:20px; height:16px; }
+.ico-theme-settings { background: image-url('adf/icon-sprite.png') 50% -2716px; }
+.ico-template-editor { background: image-url('adf/icon-sprite.png') 50% -2817px; }
+a:hover {
+  .ico-theme-settings { background-position:50% -2766px; }
+  .ico-template-editor { background-position:50% -2867px; }
+  .ico-view-storefront { background-position:-16px -273px; }
+  .ico-back-to-admin {   background-position:-48px -273px; }
+}
