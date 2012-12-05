@@ -1,10 +1,19 @@
-ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'login'
-  map.logout '/logout', :controller => 'login', :action => 'logout'
+Pixelprinter::Application.routes.draw do
 
-  map.resources :orders, :only => [:index, :show], :member => {:preview => :get, :print => :post}
-  map.resources :print_templates, :as => 'templates'
-  
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  root to: 'login#index'
+  match '/logout', to: 'login#logout', as: :logout
+
+  resources :orders, only: [:index, :show] do
+    member do
+      get :preview
+      post :print
+    end
+  end
+
+  resources :print_templates, as: :templates
+
+  match ':controller/:action/:id'
+  match ':controller/:action/:id.:format'
+
 end
+
