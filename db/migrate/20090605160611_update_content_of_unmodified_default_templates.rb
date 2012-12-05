@@ -2,7 +2,7 @@ class UpdateContentOfUnmodifiedDefaultTemplates < ActiveRecord::Migration
   TEMPLATES    = %w( invoice packing_slip variable_reference )
 
   NEW_CONTENTS = TEMPLATES.inject({}) do |memo, template|
-                   memo[template] = File.read("#{RAILS_ROOT}/db/printing/#{template}.liquid")
+                   memo[template] = File.read("#{Rails.root}/db/printing/#{template}.liquid")
                    memo
                  end
 

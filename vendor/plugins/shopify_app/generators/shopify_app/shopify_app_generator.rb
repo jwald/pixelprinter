@@ -26,7 +26,7 @@ class ShopifyAppGenerator < Rails::Generator::Base
 
         
         if File.directory?(file)          
-          if not File.exist?("#{RAILS_ROOT}/#{relative_file}")
+          if not File.exist?("#{Rails.root}/#{relative_file}")
             m.directory relative_file
           end
           
@@ -47,7 +47,7 @@ class ShopifyAppGenerator < Rails::Generator::Base
       end            
 
       # delete public/index.html
-      File.delete "#{RAILS_ROOT}/public/index.html" if File.exist?("#{RAILS_ROOT}/public/index.html")
+      File.delete "#{Rails.root}/public/index.html" if File.exist?("#{Rails.root}/public/index.html")
             
       # Display Readme
       m.readme '../README'

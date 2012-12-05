@@ -68,7 +68,7 @@ class PrintTemplateTest < ActiveSupport::TestCase
     should "save body and name from that serialized template" do
       template = @local_shop.templates.create_from_file(:invoice)
       assert_equal 'Invoice', template.name
-      assert_equal File.read("#{RAILS_ROOT}/db/printing/invoice.liquid"), template.body
+      assert_equal File.read("#{Rails.root}/db/printing/invoice.liquid"), template.body
     end
   end
   

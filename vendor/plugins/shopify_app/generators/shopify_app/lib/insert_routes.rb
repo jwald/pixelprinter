@@ -23,7 +23,7 @@ Rails::Generator::Commands::Create.class_eval do
 
     logger.route(cmd)
     unless options[:pretend]      
-      if not File.read("#{RAILS_ROOT}/config/routes.rb").include?(cmd)
+      if not File.read("#{Rails.root}/config/routes.rb").include?(cmd)
       
         gsub_file 'config/routes.rb', /(#{Regexp.escape(sentinel)})/mi do |match|
           "#{match}\n  #{cmd}"
