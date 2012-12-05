@@ -6,7 +6,7 @@
       Invoices, Package Slips and other customizable templates for<br/>
       your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.
     </p>
-    <% form_tag '/login/authenticate' do %>
+    <form action="/login/authenticate" method="post">
     <div class="sidebar-block" >   
       <p><em>Enter your shop's address</em></p>
       <p class="textfield"><label for="shop"><strong>http:// </strong></label><%= text_field_tag 'shop', nil, :size => 14 %></p>
@@ -15,7 +15,7 @@
       </p>
       <p class="low-em"><input type="image" value="login" name="login" src="images/button-login.png"></p>  
     </div>      
-    <% end %>
+  </form>
   </div>
    <div> </div>
   <img src="../images/logo.png"  alt="Logo" class="logo"   />

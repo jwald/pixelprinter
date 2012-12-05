@@ -17,15 +17,14 @@
     <% if @tmpls.blank? %>
       <p>No templates found, you should create a new one.</p>
     <% else %>
-      <% form_tag({:action => 'print'}, :id => "selected-templates") do %>
+      <form method="post" action="/orders/print", id="selected-templates">
       <ul id="list-templates">
         <% @tmpls.each do |tmpl| %>
           <%= render :partial => 'template_checkbox', :locals => {:tmpl => tmpl, :options_hidden => true} %>
         <% end %>
       </ul>
-      <% end %>
+    </form>
       <%= link_to_remote '', :url => new_print_template_path, :method => :get, :html => {:class => "new-template", :style => "display: none"} %>
-    <% end %>
   </div>
 
   <div class="sidebar-block clearfix" id="print-button" > <!-- print -->
