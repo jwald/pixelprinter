@@ -2,8 +2,8 @@ module OrderHelper
   def order_status(order)
     case order.financial_status
     when 'authorized'
-      c = 'attention'
-      i = '<i class="ico ico-16 ico-auth-expiry"></i>'
+      c = 'authorized success'
+      i = ''
     when 'pending'
       c = 'pending'
       i = ''
@@ -23,7 +23,7 @@ module OrderHelper
       c = ''
       i = ''
     end
-    content_tag :span, "#{i} #{order.financial_status}", :class => "label success #{c}"
+    content_tag :span, "#{i} #{order.financial_status}", :class => "label #{c}"
   end
   
   def fulfillment_status(order)
@@ -36,7 +36,7 @@ module OrderHelper
         c = 'warning'
       when 'shipped'
         s = 'fulfilled'
-        c = 'fulfilled'
+        c = 'complete'
       else
         s = 'not fulfilled'
         c = 'warning'

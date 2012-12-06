@@ -19,7 +19,7 @@
       </div>
     </div> <!-- box -->
     
-    <div class="box box-details">
+    <div class="box box-details printer-sidebar-template-box">
       <div class="box-header p">
         <h3>Select documents to print</h3>
       </div>
@@ -31,6 +31,8 @@
           <ul class="printer-list-templates">
             <% @tmpls.each do |tmpl| %>
               <%= render :partial => 'template_checkbox', :locals => {:tmpl => tmpl, :options_hidden => true} %>
+              <%= link_to_remote image_tag("trash.gif"), :url => tmpl, :method => :delete, :confirm => "Are you sure you want to delete the template named #{tmpl.name}?" %>
+              <%= link_to_remote "edit", :url => [:edit, tmpl], :method => 'get' %>
             <% end %>
           </ul>
           <% end %>
@@ -38,13 +40,17 @@
         <% end %>
       </div>
     </div>
+    <div class="box order-note-attr subdiv tr ssb">
+      <a href="#" class="btn slim">Create new template</a>
+    </div>
 
   </div> <!-- span7 -->
 </div> <!-- row -->
 
 <!-- Empty Containers in correct order, ready to be filled with AJAX previews -->
 <div id="preview" class="clearfix">
-  <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> <% end %>
+  <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> 
+  <% end %>
 </div>
 
 <% content_for :javascript do %>
