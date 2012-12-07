@@ -37,6 +37,27 @@ class OrdersController < ApplicationController
     end
   end
 
+  def edit
+    @safe = params[:safe]
+    if @safe
+      flash[:notice] = "Safe mode allows you to edit templates that cause the page to break when previewed."
+    end
+    
+    @order = ShopifyAPI::Order.find(params[:id])
+    
+    respond_to do |format|
+      format.html do
+        @tmpls = shop.templates
+      end
+      format.js do
+        # AJAX preview, loads in modal Dialog
+        @tmpl = shop.templates.find(params[:template_id])
+        @rendered_template = @tmpl.render(@order.to_liquid)
+        render :partial => 'preview', :locals => {:tmpl => @tmpl, :rendered_template => @rendered_template, :safe => @safe}
+      end
+    end
+  end
+
 
   def print
     @all_templates = shop.templates
