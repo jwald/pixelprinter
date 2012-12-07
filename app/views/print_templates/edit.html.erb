@@ -1,25 +1,51 @@
+<!--
 <%= @tmpl.name %>
 <%= @tmpl.created_at %>
 <%= @tmpl.updated_at %>
 <%= @tmpl.default %>
 <%= @tmpl.body %>
+-->
+
+<!-- ADD A PREVIEW BUTTON TO THE TOP ROW or sidebar -->
 
 <div class="row section description first-section">
 
   <div class="span6 section-summary">
-    <h1>Editing templates</h1>
-    <p>
-    The template can be customized using html css and liquid. Much like how customizing your store's theme works.
-    </p>
+    <h1>Edit template</h1>
+    <p>The template can be customized using html css and liquid. Much like how customizing your store's theme works.</p>
   </div>
 
   <div class="span18 section-content">
-    <label for="printer-template-edit-name">Name</label>
-    <input name="printer-template-edit-name" type="text" class="large ssb">
+    <label for="name">Name</label>
+    <input name="name" type="text" class="large ssb" value="<%= @tmpl.name %>">
 
     <div class="ssb">
-      <label for="printer-template-edit-body">Description</label>
-      <textarea name="printer-template-edit-body"></textarea>
+      <label for="body">Description</label>
+      <textarea name="body" class="printer-template-edit-body"><%= @tmpl.body %></textarea>
     </div>
   </div>
 </div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Show by default</h1>
+    <p>Templates can be slected to show by default when you open an order.</p>
+  </div>
+
+  <div class="span18 section-content">
+
+    <div>
+      <input name="show" type="radio" value="true">
+      <label class="inline" for="show">Checked</label>
+      <span class="note">(everybody can view this product)</span>
+    </div>
+    
+    <div>
+        <input name="hide" type="radio" value="false">
+        <label class="inline" for="hide">Unchecked</label>
+    </div>
+    
+  </div>
+</div>
+

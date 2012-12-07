@@ -71,4 +71,13 @@ ul {
   margin-bottom: 0;
 }
 
+.printer-template-edit {
+  float: right;
+}
+
+/* Editing Templates */
+
+.printer-template-edit-body {
+  height: 600px;
+}
 
