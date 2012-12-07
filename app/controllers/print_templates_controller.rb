@@ -44,7 +44,6 @@ class PrintTemplatesController < ApplicationController
   def edit
     @tmpls = shop.templates
     @tmpl = @tmpls.find(params[:id])
-    # render RJS template
   end
   
   def update
