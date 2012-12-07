@@ -87,7 +87,7 @@ Templates = function() {
   
   /* public methods */
   return {
-     : function(order) {
+     initialize : function(order) {
       _order = order;
       _templates = [];
       safemode = false;
