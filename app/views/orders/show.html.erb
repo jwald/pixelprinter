@@ -1,6 +1,7 @@
 <div class="row">
 
   <div class="span17">
+    <div id="empty_message" style="display: none;">You gots ta pick a template, son!?</div>
     <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> <% end %>
   </div>
   
@@ -46,12 +47,6 @@
 
   </div> <!-- span7 -->
 </div> <!-- row -->
-
-<!-- Empty Containers in correct order, ready to be filled with AJAX previews -->
-<div id="preview" class="clearfix">
-  <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> 
-  <% end %>
-</div>
 
 <% content_for :javascript do %>
   Templates.initialize('<%= @order.id %>');
