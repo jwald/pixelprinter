@@ -54,7 +54,9 @@ ul {
   margin-bottom: 20px;
 }
 
-
+#printer-preview-empty_message {
+  display: none;
+}
 
 
 .printer-template-name {
@@ -68,3 +70,5 @@ ul {
 .printer-sidebar-template-box {
   margin-bottom: 0;
 }
+
+

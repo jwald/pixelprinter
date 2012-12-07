@@ -35,9 +35,8 @@ Templates = function() {
   };
   
   var toggleEmptyMessage = function() {
-    var message = $('#empty_message');
+    var message = $('#printer-preview-empty_message');
     if (_templates.length == 0) {
-      console.log('show');
       message.show();
     } else {
       message.hide();
