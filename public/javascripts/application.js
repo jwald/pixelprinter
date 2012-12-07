@@ -34,9 +34,9 @@ Templates = function() {
     }
   };
   
-  var toggleEmptyMessage = function() {
+  var toggleEmptyMessage = function() {      // Checking if there is templates showing and providing a message if not
     var message = $('#printer-preview-empty_message');
-    if (_templates.length == 0) {
+    if (_templates.length === 0) {
       message.show();
     } else {
       message.hide();
@@ -87,7 +87,7 @@ Templates = function() {
   
   /* public methods */
   return {
-    initialize: function(order) {
+     : function(order) {
       _order = order;
       _templates = [];
       safemode = false;
