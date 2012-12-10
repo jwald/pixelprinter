@@ -25,13 +25,10 @@ ul {
 
 /* Previews */
 
-.printer-preview-wrapper {
-  border: 1px solid #ECECEC;
-  margin-bottom: 20px;
-}
-
 .printer-preview-content {
   padding: 24px;
+  border: 1px solid #ECECEC;
+  margin-bottom: 20px;
 }
 
 .printer-preview-content h1 {
@@ -85,6 +82,11 @@ ul {
 
 .variable-reference-table table td {
   width: 50%;
+}
+
+
+.page-break {
+  display: none;
 }
 
 
