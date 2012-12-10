@@ -81,3 +81,12 @@ ul {
   height: 600px;
 }
 
+/* Variable reference */
+
+.variable-reference-table table td {
+  width: 50%;
+}
+
+
+
+

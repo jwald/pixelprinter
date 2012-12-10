@@ -1,14 +1,11 @@
 <li id="template-item-<%= tmpl.id %>" class="template-item">
-  <span class="template-options" style="display: <%= defined?(options_hidden) ? 'none' : 'inline' %>">   
-    <%= link_to_remote image_tag("trash.gif"), :url => tmpl, :method => :delete, :confirm => "Are you sure you want to delete the template named #{tmpl.name}?" %>
-    <%= link_to_remote "edit", :url => [:edit, tmpl], :method => 'get' %>
-  </span>
 
   <%= check_box_tag 'print_templates[]', tmpl.id, tmpl.default, :id => "template-checkbox-#{tmpl.id}", :onclick => "Templates.updateSelection($(this));" %>
   <%= label_tag "template-checkbox-#{tmpl.id}", tmpl.name, :class => "inline" %>
   
   <div class="printer-template-edit">
-    <%= link_to_remote image_tag("trash.gif"), :url => tmpl, :method => :delete, :confirm => "Are you sure you want to delete the template named #{tmpl.name}?" %>
-    <%= link_to_remote "edit", :url => [:edit, tmpl], :method => 'get' %>
+    <!-- <%= link_to_remote image_tag("trash.gif"), :url => tmpl, :method => :delete, :confirm => "Are you sure you want to delete the template named #{tmpl.name}?" %> -->
+    <%= link_to_remote "edit", { :url => [:edit, tmpl], :method => "get"}, :class => "plain" %>
   </div>
+  
 </li>

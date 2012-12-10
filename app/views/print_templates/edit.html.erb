@@ -1,4 +1,6 @@
 <!--
+List of variables
+
 <%= @tmpl.name %>
 <%= @tmpl.created_at %>
 <%= @tmpl.updated_at %>
@@ -13,6 +15,7 @@
   <div class="span6 section-summary">
     <h1>Edit template</h1>
     <p>The template can be customized using html css and liquid. Much like how customizing your store's theme works.</p>
+    <a target="_blank" class="plain view-in-store" href="#" style="">View the variable list</a>
   </div>
 
   <div class="span18 section-content">
@@ -29,23 +32,540 @@
 <div class="row section">
 
   <div class="span6 section-summary">
-    <h1>Show by default</h1>
-    <p>Templates can be slected to show by default when you open an order.</p>
+    <h1>Template settings</h1>
+    <p>Templates can shown by default when you open an order.</p>
   </div>
 
   <div class="span18 section-content">
 
+<!-- Need to incorperate <%= @tmpl.default %> into the checkbox -->
+
     <div>
-      <input name="show" type="radio" value="true">
-      <label class="inline" for="show">Checked</label>
-      <span class="note">(everybody can view this product)</span>
-    </div>
-    
-    <div>
-        <input name="hide" type="radio" value="false">
-        <label class="inline" for="hide">Unchecked</label>
+      <input name="show" type="checkbox" value="<%= @tmpl.default %>">
+      <label class="inline" for="show">Show this template by default</label>
     </div>
     
   </div>
 </div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>General variables</h1>
+    <p>All of the general variables related to the order.</p>
+  </div>
+
+  <div class="span18 section-content">
+  
+    <div class="variable-reference-table">      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Shop name</td>
+            <td><pre>{{shop_name}}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Order name</td>
+            <td><pre>{{order_name}}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Order name <span class="note">(different variable, same content)</span></td>
+            <td><pre>{{name}}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Order number</td>
+            <td><pre>{{order_number}}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Gateway used</td>
+            <td><pre>{{ gateway }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Shipping method</td>
+            <td><pre>{{ shipping_method.title }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Subtotal price</td>
+            <td><pre>{{ subtotal_price | money }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Tax prices</td>
+            <td><pre>{{ tax_price | money }}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Tax lines</h1>
+    <p>The taxes for the order.</p>
+  </div>
+
+  <div class="span18 section-content">
+
+    <div class="variable-reference-table">
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Tax opening tag ???</td>
+            <td><pre>{% for tax_line in tax_lines %}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Price</td>
+            <td><pre>{{ tax_line.price | money }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Rate</td>
+            <td><pre>{{ tax_line.rate }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Title</td>
+            <td><pre>{{ tax_line.title }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Tax opening end tag ???</td>
+            <td><pre>{% endfor %}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Order details</h1>
+    <p>The order's details.</p>
+  </div>
+  
+  <div class="span18 section-content">
+  
+    <div class="variable-reference-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Shipping price</td>
+            <td><pre>{{ shipping_price | money }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Total price</td>
+            <td><pre>{{ total_price | money }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Note</td>
+            <td><pre>{{ note }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Attributes</td>
+            <td><pre>{{ customer.name }} - {{ customer.email }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Customer Email</td>
+            <td><pre>{{ email }} <span class="note">(different variable, same content)</span></pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Shipping address</h1>
+    <p>The address information that the order is being shipped to.</p>
+  </div>
+  
+  <div class="span18 section-content">
+  
+    <div class="variable-reference-table">      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Shipping address name</td>
+            <td><pre>{{ shipping_address.name }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Street name</td>
+            <td><pre>{{ shipping_address.street }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>City</td>
+            <td><pre>{{ shipping_address.city }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Province</td>
+            <td><pre>{{ shipping_address.province }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Province code</td>
+            <td><pre>({{ shipping_address.province_code }})</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Zip</td>
+            <td><pre>{{ shipping_address.zip | upcase }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Country</td>
+            <td><pre>{{ shipping_address.country }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Country code</td>
+            <td><pre>({{ shipping_address.country_code }})</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Phone number</td>
+            <td><pre>{{ shipping_address.phone }}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Billing address</h1>
+    <p>The  information that the order is being shipped to.</p>
+  </div>
+
+  <div class="span18 section-content">
+
+    <div class="variable-reference-table">    
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Billing address first name</td>
+            <td><pre>{{ billing_address.first_name }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Billing address last name</td>
+            <td><pre>{{ billing_address.last_name }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Street</td>
+            <td><pre>{{ billing_address.street }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>City</td>
+            <td><pre>{{ billing_address.city }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Province</td>
+            <td><pre>{{ billing_address.province }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Province code</td>
+            <td><pre>({{ billing_address.province_code }})</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Zip</td>
+            <td><pre>{{ billing_address.zip | upcase }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Country</td>
+            <td><pre>{{ billing_address.country }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Country code</td>
+            <td><pre>({{ billing_address.country_code }})</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Phone number</td>
+            <td><pre>{{ billing_address.phone }}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Line items</h1>
+    <p>Something about the items that are being shipped.</p>
+  </div>
+  
+  <div class="span18 section-content">
+
+    <div class="variable-reference-table">      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Show number of items in line items ???</td>
+            <td><pre>{% for line_item in line_items %}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Line item quantity</td>
+            <td><pre>{{ line_item.quantity }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Line item title</td>
+            <td><pre>{ line_item.title }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Line item SKU</td>
+            <td><pre>{{ line_item.sku }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>ID</td>
+            <td><pre>{{ line_item.id }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Variant</td>
+            <td><pre>{{ line_item.variant }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Product</td>
+            <td><pre>{{ line_item.product }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Price</td>
+            <td><pre>{{ line_item.price }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Line price</td>
+            <td><pre>{{ line_item.line_price }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Tax</td>
+            <td><pre>{{ line_item.tax }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Grams</td>
+            <td><pre>{{ line_item.grams }}</pre></td>
+          </tr>
+          
+          <tr>
+            <td>Vendor</td>
+            <td><pre>{{ line_item.vendor }}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    
+   <h4>Fulfilled line items</h4>
+  <ul>
+    <li>{% for line in fulfilled_line_items %}</li>
+    <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
+    <li>{% endfor %}</li>
+  </ul>
+
+  <h4>Unfulfilled line items</h4>
+  <ul>
+    <li>{% for line in unfulfilled_line_items %}</li>
+    <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
+    <li>{% endfor %}</li>
+  </ul>
+
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Variable Reference</h1>
+    <p>The template can be customized using html css and liquid. Much like how customizing your store's theme works.</p>
+  </div>
+
+  <div class="span18 section-content">
+    
+    <h1>Hello from {{shop_name}}</h1>
+    <ul>
+      <li><strong>Order name:</strong>      {{order_name}}</li>
+      <li><strong>Order name:</strong>      {{name}} (different variable, same content)</li>
+      <li><strong>Order Number:</strong>    {{order_number}}</li>
+    </ul>
+    
+    <ul>
+      <li><strong>Gateway used:</strong>    {{ gateway }}</li>
+      <li><strong>Shipping method:</strong> {{ shipping_method.title }}</li>
+    </ul>
+    
+    <ul>
+      <li><strong>Subtotal price:</strong>  {{ subtotal_price | money }}</li>
+      <li><strong>Tax Price:</strong>       {{ tax_price | money }}</li>
+    </ul>
+    
+    
+    <ul>
+      <li><strong>Tax Lines:</strong></li>
+      <li>{% for tax_line in tax_lines %}</li>
+      <ul>
+          <li><strong>price:</strong>         {{ tax_line.price | money }}</li>
+          <li><strong>rate:</strong>         {{ tax_line.rate }}</li>
+          <li><strong>title:</strong>         {{ tax_line.title }}</li>
+        </ul>
+      <li>{% endfor %}</li>
+    </ul>
+    
+    <ul>
+      <li><strong>Shipping price:</strong>  {{ shipping_price | money }}</li>
+      <li><strong>Total price:</strong>     {{ total_price | money }}</li>
+    </ul>
+      
+    <ul>  
+      <li><strong>Note:</strong>       {{ note }}</li>
+      <li><strong>Attributes:</strong> {{ attributes }}</li>
+    </ul>
+      
+    <ul>
+      <li><strong>Customer name and email:</strong> {{ customer.name }} - <u>{{ customer.email }}</u></li>
+      <li><strong>Customer Email:</strong> {{ email }} <em>(different variable, same content)</em></li>
+    </ul>
+      
+    <h3>Shipping Address</h3>
+    <ul>
+      <li>{{ shipping_address.name }}</li>
+      <li>{{ shipping_address.street }}</li>
+      <li>{{ shipping_address.city }}</li>
+      <li>{{ shipping_address.province }}</li>
+      <li>({{ shipping_address.province_code }})</li>
+      <li>{{ shipping_address.zip | upcase }}</li>
+      <li>{{ shipping_address.country }}</li>
+      <li>({{ shipping_address.country_code }})</li>
+      <li>{{ shipping_address.phone }}</li>
+    </ul>
+       
+    <h3>Billing Address</h3>
+    <ul>
+      <li>{{ billing_address.last_name }}, {{ billing_address.first_name }}</li>
+      <li>{{ billing_address.street }}</li>
+      <li>{{ billing_address.city }}</li>
+      <li>{{ billing_address.province }}</li>
+      <li>({{ billing_address.province_code }})</li>
+      <li>{{ billing_address.zip | upcase }}</li>
+      <li>{{ billing_address.country }}</li>
+      <li>({{ billing_address.country_code }})</li>
+      <li>{{ billing_address.phone }}</li>
+    </ul>
+      
+    <h3>Line Items</h3>
+    <ul>
+      <li>{% for line_item in line_items %}</li>
+      <li>{{ line_item.quantity }} x {{ line_item.title }}		(SKU: {{ line_item.sku }})</li>
+        <ul>
+          <li><strong>ID:</strong>         {{ line_item.id }}</li>
+          <li><strong>VARIANT:</strong>    {{ line_item.variant }}</li>
+          <li><strong>PRODUCT:</strong>    {{ line_item.product }}</li>
+          <li><strong>PRICE:</strong>      {{ line_item.price }}</li>
+          <li><strong>LINE PRICE:</strong> {{ line_item.line_price }}</li>
+          <li><strong>TAX:</strong>        {{ line_item.tax }}</li>
+          <li><strong>GRAMS:</strong>      {{ line_item.grams }}</li>
+          <li><strong>VENDOR:</strong>     {{ line_item.vendor }}</li>
+        </ul>
+      <li>{% endfor %}</li>
+    </ul>
+        
+    <h4>Fulfilled line items</h4>
+    <ul>
+      <li>{% for line in fulfilled_line_items %}</li>
+      <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
+      <li>{% endfor %}</li>
+    </ul>
+    
+    <h4>Unfulfilled line items</h4>
+    <ul>
+      <li>{% for line in unfulfilled_line_items %}</li>
+      <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
+      <li>{% endfor %}</li>
+    </ul>
+
+  </div>
+</div>
+
 
