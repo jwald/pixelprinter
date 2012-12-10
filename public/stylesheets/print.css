@@ -1,0 +1,56 @@
+body {font-family: helvetica, arial, serif;}
+/* HIDE ELEMENTS */
+#sidebar, .preview-top, #notice-item-wrapper, #flashnotice, #flashnotices, #flasherrors {
+  display: none;
+}
+
+.box, .header-row, #header, .printer-template-actions {
+  display: none;
+}
+
+.header-row > .span24, .header-row {
+  display: none;
+}
+
+#content, body, #body {
+  padding: 0;
+  background: white;
+}
+
+.span17 {
+  width: 100%;
+}
+
+form {
+  display: none;
+}
+
+
+
+
+
+/* Always print each template on a new page */  
+
+.printer-preview-wrapper, .printer-preview-content {
+  position: relative;
+  page-break-after: always;
+  page-break-inside: avoid;
+  clear: both;
+  overflow:visible;
+  display: block;
+  float: none;
+}
+
+/*
+.page-break {
+  display: block;
+  page-break-before: always;
+  float: none;
+}
+*/
+
+
+.printer-preview-content {
+  height: 7in;
+  border: none;
+}
