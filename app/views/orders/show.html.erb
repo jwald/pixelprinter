@@ -1,7 +1,16 @@
 <div class="row">
 
   <div class="span17">
-    <div id="printer-preview-empty_message">Please select a template from the right to continue.</div>
+    
+    <div id="printer-preview-blank-slate" class="blank-slate" style="">
+      <i class="ico ico-72 ico-articles"></i>
+      <h2>No documents selected</h2>
+      <p>Please select a template from the right to continue</p>
+    </div>
+    
+    
+    
+    
     <% @tmpls.each do |tmpl| %> <div id="preview-<%= tmpl.id %>"></div> <% end %>
   </div>
   

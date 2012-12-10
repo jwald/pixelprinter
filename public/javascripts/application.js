@@ -35,7 +35,7 @@ Templates = function() {
   };
   
   var toggleEmptyMessage = function() {      // Checking if there is templates showing and providing a message if not
-    var message = $('#printer-preview-empty_message');
+    var message = $('#printer-preview-blank-slate');
     if (_templates.length === 0) {
       message.show();
     } else {
