@@ -1,26 +1,24 @@
+<div class="login-content">
+  <h1 class="login-app-banner"><%= APP_NAME %></h1>
 
-<div id="login">
-  <div id="login-wrapper" >
-    <h1><%= APP_NAME %></h1>
-    <p class="description">
-      Invoices, Package Slips and other customizable templates for<br/>
-      your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.
-    </p>
-    <% form_tag '/login/authenticate' do %>
-    <div class="sidebar-block" >   
-      <p><em>Enter your shop's address</em></p>
-      <p class="textfield"><label for="shop"><strong>http:// </strong></label><%= text_field_tag 'shop', nil, :size => 14 %></p>
-      <p class="description">
-        <span><em>Example:</em> teslamotors.myshopify.com
-      </p>
-      <p class="low-em"><input type="image" value="login" name="login" src="images/button-login.png"></p>  
-    </div>      
-    <% end %>
-  </div>
-   <div> </div>
-  <img src="../images/logo.png"  alt="Logo" class="logo"   />
+  <h2 class="login-header-title"><%= APP_NAME %></h2>
+  <p>Invoices, Package Slips and other customizable templates for your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.<br />
+  Comes with pre-made templates that are fully customizable, very similar to the email templates found in Shopify's preferences.</p>
   
-</div>     
+  <% form_tag '/login/authenticate' do %>
+    <div class="login-field">
+      <h3 class="heading">Enter your Shopify store address</h3>
+      <span class="login-hint">http://</span>
+      <%= text_field_tag 'shop', nil, :placeholder => 'your-store-name.myshopify.com' %>
+    </div>
+  
+    <div class="box tr login-subdiv">
+      <span class="login-freetrial">Don’t have a Shopify account yet? <a href="http://shopify.com">Start your 30 day free trial.</a></span>
+      <input class="btn" type="submit" value="Add this App to my store" name="login">
+    </div>
+  <% end %>
+</div>
+
 <% content_for :javascript do %>
 $(":text:visible:enabled:first").focus();
-<% end %>              
+<% end %>

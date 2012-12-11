@@ -3,6 +3,7 @@ class LoginController < ApplicationController
   def index
     # don't ask user for his #{shop}.myshopify.com address if it is already provided
     redirect_to :controller => 'login', :action => "authenticate", :shop => params[:shop] if params[:shop].present?
+    render :layout => 'install'
   end
 
 

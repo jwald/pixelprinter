@@ -3,8 +3,17 @@ ul {
   list-style: none;
 }
 
-
 .order-details-number {
+  font-size: 24px;
+  font-family: "ProximaNovaLight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+  line-height: 32px;
+  font-weight: 300;
+  white-space: nowrap;
+  padding: 0 0 6px 0;
+}
+
+.printer-header-title {
   font-size: 24px;
   font-family: "ProximaNovaLight","Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: left;
@@ -18,9 +27,65 @@ ul {
   padding: 6px 0 0 0;
 }
 
-
 .printer-list-templates {
   margin-left: 0px;
+}
+
+/* Install */
+
+.login-content {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  padding: 25px;
+}
+
+.login-app-banner {
+  background: #ae5526 url("/images/printer-app-logo.jpg") no-repeat center;
+  height: 100px;
+  margin: -25px -25px 25px -25px;
+  text-indent: -30000px;
+}
+
+.login-header-title {
+  font-size: 24px;
+  font-family: "ProximaNovaLight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+  line-height: 32px;
+  font-weight: 300;
+  white-space: nowrap;
+  padding: 0 0 6px 0;
+}
+
+.login-content p {
+  margin-bottom: 15px;
+  color: #777;
+}
+
+.login-freetrial {
+  float: left;
+  margin: 7px 0 0 5px;
+}
+
+.login-subdiv {
+  margin: 25px -25px -25px -25px;
+}
+
+.login-hint {
+  display: block;
+  position: relative;
+  margin-bottom: -24px;
+  margin-left: 8px;
+  padding-top: 8px;
+  width: 20px;
+  user-select: none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+}
+
+#shop {
+  text-indent: 42px;
 }
 
 /* Previews */
@@ -55,12 +120,17 @@ ul {
   display: none;
 }
 
-
 .printer-template-name {
   border: 0;
   margin: 0;
 }
 
+/* Editing */
+
+.view-in-store {
+  padding-right: 24px;
+  background: url("/images/adf/icon-sprite.png") no-repeat 100% -2568px;
+}
 
 /* Sidebar */
 
@@ -84,7 +154,6 @@ ul {
   width: 50%;
   padding: 0 10px;
 }
-
 
 .page-break {
   display: none;

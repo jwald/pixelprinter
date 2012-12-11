@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     redirect_to :action => 'show', :id => params[:id] if params[:id].present?
     
     # get latest 3 orders
-    @orders = ShopifyAPI::Order.find(:all, :params => {:limit => 3, :order => "created_at DESC" })
+    @orders = ShopifyAPI::Order.find(:all, :params => {:limit => 6, :order => "created_at DESC" })
     # get all printing templates for the current shop
     @tmpls  = shop.templates
   end
