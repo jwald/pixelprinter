@@ -1,15 +1,14 @@
 <div class="login-content">
   <h1 class="login-app-banner"><%= APP_NAME %></h1>
 
-  <h2 class="login-header-title"><%= APP_NAME %></h2>
   <p>Invoices, Package Slips and other customizable templates for your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.<br />
   Comes with pre-made templates that are fully customizable, very similar to the email templates found in Shopify's preferences.</p>
   
   <% form_tag '/login/authenticate' do %>
     <div class="login-field">
       <h3 class="heading">Enter your Shopify store address</h3>
-      <span class="login-hint">http://</span>
-      <%= text_field_tag 'shop', nil, :placeholder => 'your-store-name.myshopify.com' %>
+      <span class="login-hint">.myshopify.com</span>
+      <%= text_field_tag 'shop', nil, :placeholder => 'your-store-name' %>
     </div>
   
     <div class="box tr login-subdiv">
