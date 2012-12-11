@@ -19,6 +19,9 @@ module OrderHelper
     when 'error'
       c = 'error'
       i = ''
+    when 'paid'
+      c = 'complete'
+      i = ''
     else
       c = ''
       i = ''
@@ -34,7 +37,10 @@ module OrderHelper
       when 'warning'
         s = 'warning'
         c = 'warning'
-      when 'shipped'
+      when 'complete'
+        s = 'fulfilled'
+        c = 'complete'
+      when 'fulfilled'
         s = 'fulfilled'
         c = 'complete'
       else

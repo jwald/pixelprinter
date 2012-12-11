@@ -11,7 +11,7 @@
 <p>Thanks for buying the following products from our shop:</p>
 
 {% for line_item in line_items %}
-  {{ line_item.quantity }} x {{ line_item.title }} &mdash; {{ line_item.price | money }}<br/>
+  <p>{{ line_item.quantity }} x {{ line_item.title }} &mdash; {{ line_item.price | money }}</p>
 {% endfor %}
 
 <h3>Payment Details</h3>
