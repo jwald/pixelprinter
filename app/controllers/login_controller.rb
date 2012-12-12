@@ -5,6 +5,10 @@ class LoginController < ApplicationController
     redirect_to :controller => 'login', :action => "authenticate", :shop => params[:shop] if params[:shop].present?
     render :layout => 'install'
   end
+  
+  def intro
+    render :layout => 'install'
+  end
 
 
   def authenticate

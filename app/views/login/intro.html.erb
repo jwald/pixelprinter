@@ -1,0 +1,29 @@
+<div class="login-content">
+  <h1 class="login-app-banner"><%= APP_NAME %></h1>
+  <h2 class="login-header-title">Using <%= APP_NAME %></h2>
+  <p>Invoices, Package Slips and other customizable templates for your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.<br />
+  Comes with pre-made templates that are fully customizable, very similar to the email templates found in Shopify's preferences.</p>
+  
+    <div class="intro-howto row">
+      <div class="intro-howto-section intro-howto-section-first">
+        <img src="/images/app-old-admin.jpg" />
+        <h3>Using the classic Shopify admin</h3>
+        <p>Go to your Orders page and click on the Print using Invoice Printer link.</p>
+      </div>
+      
+      <div class="intro-howto-section">
+        <img src="/images/app-new-admin.jpg" />
+        <h3>Using the new Shopify admin</h3>
+        <p>Go to your Orders page and click on the Apps dropdown menu. From there select Print using Invoice Printer.</p>
+      </div>
+      
+    </div>
+  
+    <div class="box tr login-subdiv">
+      <a href="/orders" class="btn">Continue</a>
+    </div>
+</div>
+
+<% content_for :javascript do %>
+$(":text:visible:enabled:first").focus();
+<% end %>
