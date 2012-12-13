@@ -4,12 +4,13 @@
 <% end %>
 
 <% content_for :page_title do %>
-  <i class="ico ico-20 ico-20-facebook"></i>
-  <a href="/orders" class="breadcrumb">Invoice & Receipt Printer /</a>
-  <span><%= @tmpl.name %></span>
+  <a href="/orders"><i class="ico ico-20 app-icon"></i></a>
+  <a href="/orders" class="breadcrumb">Invoice & Receipt Printer</a>
+  <span class="breadcrumb">/</span>
+  <span>Edit <%= @tmpl.name %></span>
 <% end %>
 
-<form action="#" data-formchange=".save-button" >
+<form action="#" data-formchange=".save-button">
 
 <div class="row section description first-section">
 

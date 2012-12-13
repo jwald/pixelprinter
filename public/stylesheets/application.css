@@ -31,6 +31,12 @@ ul {
   margin-left: 0px;
 }
 
+.app-icon {
+  width: 20px;
+  height: 20px;
+  background: url("/images/printer-icon-20.png") 0 0 no-repeat;
+}
+
 /* Install */
 
 .login-content {

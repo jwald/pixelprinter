@@ -1,3 +1,14 @@
+<% content_for :header_right do %>
+  <a href="#"><%= link_to_function "Print", "Templates.print()", :class => "btn primary" %></a>
+<% end %>
+
+<% content_for :page_title do %>
+  <a href="/orders"><i class="ico ico-20 app-icon"></i></a>
+  <a href="/orders" class="breadcrumb"><%= @order.name %></a>
+  <span class="breadcrumb">/</span>
+  <span>Print Documents</span>
+<% end %>
+
 <div class="row">
 
   <div class="span17">
