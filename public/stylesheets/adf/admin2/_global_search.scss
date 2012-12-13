@@ -7,7 +7,7 @@
     }
   }
   &.is-focused.is-searching {
-    .global-search-input { background: image-url('boilerplate/icon-sprite.png') no-repeat -2px -962px; background: image-url('boilerplate/icon-sprite.png'), image-url('boilerplate/spinner.gif'); background-position:-2px -962px, 226px 45%; background-repeat:no-repeat; background-color:#fff; }
+    .global-search-input { background: image-url('adf/icon-sprite.png') no-repeat -2px -962px; background: image-url('adf/icon-sprite.png'), image-url('adf/spinner.gif'); background-position:-2px -962px, 226px 45%; background-repeat:no-repeat; background-color:#fff; }
   }
   .selected-result { background:#f0f0f0;
     a { color:#333; }
@@ -15,8 +15,8 @@
   a:focus { outline:none; }
 }
 .global-search-form { line-height:$black_header_height; position:relative; padding:0 15px; }
-.global-search-input { width:100%; font-size:12.5px; @include transition(background-color, 0.15s); position:relative; top:-1px; background:#3a3a3a image-url('boilerplate/icon-sprite.png'); background-position:-2px -962px; background-repeat:no-repeat; padding:4px 10px 4px 32px; vertical-align:middle; z-index:60; border:none; border-right:1px solid #222; color:#818280; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; @include rounded(14px); }
-.global-search-input-clear { opacity:0.8; position:absolute; z-index:70; top:9px; right:14px; width:30px; height:30px; text-indent:-9999px; background:image-url('boilerplate/clear-filter.png') no-repeat 45% -21px;
+.global-search-input { width:100%; font-size:12.5px; @include transition(background-color, 0.15s); position:relative; top:-1px; background:#3a3a3a image-url('adf/icon-sprite.png'); background-position:-2px -962px; background-repeat:no-repeat; padding:4px 10px 4px 32px; vertical-align:middle; z-index:60; border:none; border-right:1px solid #222; color:#818280; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; @include rounded(14px); }
+.global-search-input-clear { opacity:0.8; position:absolute; z-index:70; top:9px; right:14px; width:30px; height:30px; text-indent:-9999px; background:image-url('adf/clear-filter.png') no-repeat 45% -21px;
   &:hover { opacity:1; }
 }
 .global-search-results { background:#fff; border:1px solid #ccc; border-top:none; overflow:hidden; @include box-shadow($default_box_shadow); }

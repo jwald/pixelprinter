@@ -17,7 +17,8 @@
   <%= stylesheet_link_tag "adf/framework", :media => "all" %>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag 'print', :media => 'print' %>
-  <%= javascript_include_tag :defaults, 'jquery-ui' %> 
+  <%= javascript_include_tag :defaults, 'jquery-ui' %>
+  <%= javascript_include_tag 'adf/framework.js' %>
 
   <% javascript_tag do %>
     <% if flash[:notice] %> window.onload = function() { Messenger.notice(<%= h(flash[:notice]).inspect %>); } <% end %>
@@ -31,26 +32,56 @@
 	
 <body>
 
-  <%= render 'common/header' %>
+  <header id="header">
+    <div class="wrapper clearfix">
+      <% if shop %>
+        <h1><a class="logo" href="https://<%= shop.domain %>/admin">Dashboard</a></h1>
+        <a class="back-to-admin" href="https://<%= shop.domain %>/admin"><i class="ico ico-16 ico-back-to-admin"></i>Back to admin</a>  
+      <% else %>
+        <h1><a class="logo" href="https://shopify.com">Shopify</a></h1>
+      <% end %>
+      
+      <nav class="header-text">
+      <% if shop %>
+        <%= @content_for_topbar_right %>
+        <span class="user-overview" data-dropdown="~ .dropdown">
+          <span><%= shop.name %></span>
+          <i class="ico ico-16 ico-disclosure"></i>
+        </span>
+        <div class="dropdown">
+          <ul>
+            <li><a href="http://support.shopify.com">Support</a></li>
+            <li><a href="http://ecommerce.shopify.com">Forums</a></li>
+            <li class="break-top"><a href="http://shopify.com/legal/terms" target="_blank">Terms of Service</a></li>
+            <li class="break"><a href="http://shopify.com/legal/privacy" target="_blank">Privacy Policy</a></li>
+            <li><a href="https://<%= shop.domain %>/admin/auth/logout">Log out</a></li>
+          </ul>
+        </div>
+      <% end %>
+      </nav>
+    </div> <!-- /.wrapper -->
+  </header>
   
   <div id="global-notification">
-    <div id="flashnotice" style="display:none;"></div>
-    <div id="flasherrors" style="display:none;"></div>    
+    <% flash.each do |type, message| %>
+      <span class="notification-message <%= type %>"><%= message %></span>
+      <a class="close-notification" href="#">
+        <i class="ico ico-16 ico-close-notification"></i>
+      </a>
+    <% end %>
   </div>
   
   <div class="wrapper">
     <div id="body" class="clearfix">
       <div id="content">
-        <section id="facebook-store">
+        <section>
           <div>
-            <div id="facebook-store-config" class="page">
+            <div class="page">
               <div class="header-row">
                   <div class="span24">
                     <header>
-                      <h1 class="header-main">PixelPrinter</h1>
-                      <div class="header-right">
-                        <a href="#"><%= link_to_function "Print", "Templates.print()", :class => "btn primary tooltip", :style => "margin: 10px 0 0px 0" %></a>
-                      <div>
+                      <h1 class="header-main"><%= @content_for_page_title %></h1>
+                      <div class="header-right"><%= @content_for_header_right %><div>
                     </header>
                   </div>
                 </div>
@@ -61,6 +92,8 @@
       </div>
     </div>
   </div>
+  
+  <%= yield :modals %>
   
 </body>
 </html>

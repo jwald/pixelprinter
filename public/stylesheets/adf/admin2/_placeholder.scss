@@ -8,7 +8,7 @@ div.placeholder { position:relative; height:30px;
   input[type=text], input[type=email] { z-index:20; background-color:rgba(255,255,255,0); @include transition(background-color, 0.15s);
     &:focus { background-color:rgba(255,255,255,0.8); }
   }
-  .clear-filter { display:block; cursor:text; position:absolute; opacity:0.8; right:0; top:0; z-index:30; width:30px; height:30px; background:url(image-path('admin2/resources/clear-filter.png')) no-repeat 32px -21px; text-indent:-99999px; @include transition(background-position);
+  .clear-filter { display:block; cursor:text; position:absolute; opacity:0.8; right:0; top:0; z-index:30; width:30px; height:30px; background: image-url('adf/clear-filter.png') no-repeat 32px -21px; text-indent:-99999px; @include transition(background-position);
     &:hover { opacity:1.0; }
   }
   &.notEmpty {

@@ -1,5 +1,5 @@
 /* COUNTRY FLAGS */
-.flag { display:inline-block; vertical-align: top; width:16px; height:11px; margin:3px 5px 3px 0px; background: image-url('flags.png') no-repeat;
+.flag { display:inline-block; vertical-align: top; width:16px; height:11px; margin:3px 5px 3px 0px; background: image-url('adf/flags.png') no-repeat;
   &.blank { background:none; }
 }
 .flag.flag-AD { background-position: -16px 0px; }

@@ -18,7 +18,7 @@ table { width:100%; border-collapse: separate; border-spacing: 0;
     &.is-sortable { cursor:pointer;
       &:hover { background: #f9f9f9; color: #3A9EF0; }
       > span { padding-right:16px; }
-      &.sorted-desc > span, &.sorted-asc > span { background:url(image-path('admin2/resources/sorting.png')) no-repeat; }
+      &.sorted-desc > span, &.sorted-asc > span { background:image-url('adf/sorting.png') no-repeat; }
       &.sorted-desc > span { background-position:100% -7px; }
       &.sorted-asc > span { background-position:100% -37px; }
       &.right-aligned {

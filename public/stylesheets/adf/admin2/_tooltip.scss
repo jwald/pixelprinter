@@ -4,7 +4,7 @@
 /* 2.8. Tooltips */
 .tooltip { position:relative !important;
   .container { display:none; position:absolute; z-index:50; color:#fff; top:100%; text-transform:none; right:50%; white-space:nowrap; text-align:center; text-decoration:none; text-indent:0px; }
-  .label { border:none; display:block; position:relative; right:-50%; background:url(image-path('admin2/resources/dropdown.png')) 50% 0px; min-height:14px; text-decoration:none; line-height:16px; text-shadow:none; margin:3px 0 0 0; padding:9px 8px 4px 8px; font-weight:400; font-size:11px; @include rounded(0px); }
+  .label { border:none; display:block; position:relative; right:-50%; background:image-url('adf/dropdown.png') 50% 0px; min-height:14px; text-decoration:none; line-height:16px; text-shadow:none; margin:3px 0 0 0; padding:9px 8px 4px 8px; font-weight:400; font-size:11px; @include rounded(0px); }
   &.is-active .container { display:block; }
 }
 a.tooltip .label, a.tooltip.is-active .label { text-decoration:none; }

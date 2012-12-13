@@ -18,7 +18,7 @@
 /* when the textarea has an error, show that on the iframe, too */
 .wysihtml5-plainview.error ~ .wysihtml5-sandbox { border-color:#cc4c3f; }
 
-.ico-rte { width: 12px; height: 12px; background: url(image-path('admin2/resources/icon-sprite-rte.png')) 0 0 no-repeat; text-indent: 100%; white-space:nowrap; overflow:hidden; }
+.ico-rte { width: 12px; height: 12px; background: image-url('adf/icon-sprite-rte.png') 0 0 no-repeat; text-indent: 100%; white-space:nowrap; overflow:hidden; }
 .ico-rte-format { margin: 0 5px 0 0; background-position: 0 0; }
 .ico-rte-bold { background-position: -12px 0; }
 .ico-rte-italic { background-position: -24px 0; }
