@@ -9,6 +9,8 @@
   <span><%= @tmpl.name %></span>
 <% end %>
 
+<form action="#" data-formchange=".save-button" >
+
 <div class="row section description first-section">
 
   <div class="span6 section-summary">
@@ -50,8 +52,10 @@
 
 <div class="row section buttons">
   <a class="fl btn destroy" data-modal=".modal-testmodal" href="#">Delete this template</a>
-  <input type="submit" class="btn " data-addclass-primary="product.isDirty" value="Save">
+  <input type="submit" class="btn save-button" value="Save">
 </div>
+
+</form>
 
 <% content_for :modals do %>
   <div class="modal-bg hidden modal-testmodal">
