@@ -4,7 +4,9 @@
 
 <% content_for :page_title do %>
   <a href="/orders"><i class="ico ico-20 app-icon"></i></a>
-  <a href="/orders" class="breadcrumb"><%= @order.name %></a>
+  <a href="https://<%= shop.domain %>/admin/orders" class="breadcrumb">Orders</a>
+  <span class="breadcrumb">/</span>
+  <a href="https://<%= shop.domain %>/admin/orders/<%= @order.id %>" class="breadcrumb"><%= @order.name %></a>
   <span class="breadcrumb">/</span>
   <span>Print Documents</span>
 <% end %>
@@ -26,15 +28,25 @@
   <div class="span7">
     <div class="box box-details">
       <div class="box-header p">
-        <h3>Order details</h3>
+        <h3>Order <%= @order.name %></h3>
+        <span class="edit-order"><a href="https://<%= shop.domain %>/admin/orders/<%= @order.id %>">view</a></span>
       </div>
-      <div class="box-content">
-        <h1 class="order-details-number">Order <%= @order.name %></h1>
-        <strong><%= @order.billing_address.name %> (<%= @order.billing_address.country %>)</strong>
-        <p class="printer-order-details-price">
-          <%= money_with_currency(@order.total_price, true) %>
-          <%= order_status(@order) %>
-        </p>
+      <div class="box-content p printer-order-details-content">
+          
+        <span><strong><%= @order.billing_address.name %></strong></span>
+        <span><%= @order.billing_address.company %></span>
+        <span><%= @order.billing_address.address1 %></span>
+        <span><%= @order.billing_address.address2 %></span>
+        <span><%= @order.billing_address.city %> <%= @order.billing_address.province_code %> <%= @order.billing_address.zip %></span>
+        
+        <!-- Figure out what to do with the flag -->
+        <!-- <span class="fl flag flag-CA">&nbsp;</span> -->
+
+        <span><%= @order.billing_address.country %></span>
+        
+        <span class="st">Order total: <%= money_with_currency(@order.total_price, true) %></span>
+        <span class="printer-order-details-status">Payment status: <%= order_status(@order) %></span>
+
       </div>
     </div> <!-- box -->
     

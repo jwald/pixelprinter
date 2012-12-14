@@ -13,6 +13,14 @@ ul {
   padding: 0 0 6px 0;
 }
 
+.printer-order-details-content span {
+  display: block;
+}
+
+.printer-order-details-status span {
+  display: inline;
+}
+
 .printer-header-title {
   font-size: 24px;
   font-family: "ProximaNovaLight","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -23,10 +31,6 @@ ul {
   padding: 0 0 6px 0;
 }
 
-.printer-order-details-price {
-  padding: 6px 0 0 0;
-}
-
 .printer-list-templates {
   margin-left: 0px;
 }
@@ -35,6 +39,17 @@ ul {
   width: 20px;
   height: 20px;
   background: url("/images/printer-icon-20.png") 0 0 no-repeat;
+}
+
+.box-details .edit-order {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.box-details .edit-order a {
+  color: #57636D;
+  text-decoration: underline;
 }
 
 /* Install */
