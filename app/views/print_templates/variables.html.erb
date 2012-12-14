@@ -395,6 +395,45 @@
   </div>
 </div>
 
+<div class="row section">
+
+  <div class="span6 section-summary">
+    <h1>Discounts</h1>
+    <p>Information related to if there is a discount applied.</p>
+  </div>
+
+  <div class="span18 section-content">
+
+    <div class="variable-reference-table">      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable discription</th>
+            <th>Variable name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Discount amount</td>
+            <td><pre>{{ discount.amount }}</pre></td>
+          </tr>
+
+          <tr>
+            <td>Discount savings</td>
+            <td><pre>{{ discount.savings }}</pre></td>
+          </tr>
+
+          <tr>
+            <td>Discount code</td>
+            <td><pre>{{ discount.code }}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
    <h4>Fulfilled line items</h4>
   <ul>
     <li>{% for line in fulfilled_line_items %}</li>
@@ -408,119 +447,6 @@
     <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
     <li>{% endfor %}</li>
   </ul>
-
-  </div>
-</div>
-
-<div class="row section">
-
-  <div class="span6 section-summary">
-    <h1>Variable Reference</h1>
-    <p>The template can be customized using html css and liquid. Much like how customizing your store's theme works.</p>
-  </div>
-
-  <div class="span18 section-content">
-
-    <h1>Hello from {{shop_name}}</h1>
-    <ul>
-      <li><strong>Order name:</strong>      {{order_name}}</li>
-      <li><strong>Order name:</strong>      {{name}} (different variable, same content)</li>
-      <li><strong>Order Number:</strong>    {{order_number}}</li>
-    </ul>
-
-    <ul>
-      <li><strong>Gateway used:</strong>    {{ gateway }}</li>
-      <li><strong>Shipping method:</strong> {{ shipping_method.title }}</li>
-    </ul>
-
-    <ul>
-      <li><strong>Subtotal price:</strong>  {{ subtotal_price | money }}</li>
-      <li><strong>Tax Price:</strong>       {{ tax_price | money }}</li>
-    </ul>
-
-
-    <ul>
-      <li><strong>Tax Lines:</strong></li>
-      <li>{% for tax_line in tax_lines %}</li>
-      <ul>
-          <li><strong>price:</strong>         {{ tax_line.price | money }}</li>
-          <li><strong>rate:</strong>         {{ tax_line.rate }}</li>
-          <li><strong>title:</strong>         {{ tax_line.title }}</li>
-        </ul>
-      <li>{% endfor %}</li>
-    </ul>
-
-    <ul>
-      <li><strong>Shipping price:</strong>  {{ shipping_price | money }}</li>
-      <li><strong>Total price:</strong>     {{ total_price | money }}</li>
-    </ul>
-
-    <ul>  
-      <li><strong>Note:</strong>       {{ note }}</li>
-      <li><strong>Attributes:</strong> {{ attributes }}</li>
-    </ul>
-
-    <ul>
-      <li><strong>Customer name and email:</strong> {{ customer.name }} - <u>{{ customer.email }}</u></li>
-      <li><strong>Customer Email:</strong> {{ email }} <em>(different variable, same content)</em></li>
-    </ul>
-
-    <h3>Shipping Address</h3>
-    <ul>
-      <li>{{ shipping_address.name }}</li>
-      <li>{{ shipping_address.street }}</li>
-      <li>{{ shipping_address.city }}</li>
-      <li>{{ shipping_address.province }}</li>
-      <li>({{ shipping_address.province_code }})</li>
-      <li>{{ shipping_address.zip | upcase }}</li>
-      <li>{{ shipping_address.country }}</li>
-      <li>({{ shipping_address.country_code }})</li>
-      <li>{{ shipping_address.phone }}</li>
-    </ul>
-
-    <h3>Billing Address</h3>
-    <ul>
-      <li>{{ billing_address.last_name }}, {{ billing_address.first_name }}</li>
-      <li>{{ billing_address.street }}</li>
-      <li>{{ billing_address.city }}</li>
-      <li>{{ billing_address.province }}</li>
-      <li>({{ billing_address.province_code }})</li>
-      <li>{{ billing_address.zip | upcase }}</li>
-      <li>{{ billing_address.country }}</li>
-      <li>({{ billing_address.country_code }})</li>
-      <li>{{ billing_address.phone }}</li>
-    </ul>
-
-    <h3>Line Items</h3>
-    <ul>
-      <li>{% for line_item in line_items %}</li>
-      <li>{{ line_item.quantity }} x {{ line_item.title }}		(SKU: {{ line_item.sku }})</li>
-        <ul>
-          <li><strong>ID:</strong>         {{ line_item.id }}</li>
-          <li><strong>VARIANT:</strong>    {{ line_item.variant }}</li>
-          <li><strong>PRODUCT:</strong>    {{ line_item.product }}</li>
-          <li><strong>PRICE:</strong>      {{ line_item.price }}</li>
-          <li><strong>LINE PRICE:</strong> {{ line_item.line_price }}</li>
-          <li><strong>TAX:</strong>        {{ line_item.tax }}</li>
-          <li><strong>GRAMS:</strong>      {{ line_item.grams }}</li>
-          <li><strong>VENDOR:</strong>     {{ line_item.vendor }}</li>
-        </ul>
-      <li>{% endfor %}</li>
-    </ul>
-
-    <h4>Fulfilled line items</h4>
-    <ul>
-      <li>{% for line in fulfilled_line_items %}</li>
-      <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
-      <li>{% endfor %}</li>
-    </ul>
-
-    <h4>Unfulfilled line items</h4>
-    <ul>
-      <li>{% for line in unfulfilled_line_items %}</li>
-      <li>{{ line.quantity }} x {{line.title }}		(sku: {{ line.sku }})</li>
-      <li>{% endfor %}</li>
-    </ul>
 
   </div>
 </div>
