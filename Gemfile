@@ -1,6 +1,6 @@
 source :gemcutter
 
-gem "rails", "2.3.16"
+gem "rails", "2.3.17"
 gem 'liquid', '2.3.0', :git => 'git://github.com/Shopify/liquid.git', :ref => '6ebdded'
 
 group :production do
