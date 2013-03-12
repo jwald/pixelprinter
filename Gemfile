@@ -17,3 +17,5 @@ group :test do
   gem "mocha"
   gem "context"
 end
+
+gem 'gembeat', '~> 0.0.1'

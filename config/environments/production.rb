@@ -26,3 +26,14 @@ config.action_controller.perform_caching             = true
 # Enable threaded mode
 # config.threadsafe!
 config.cache_store = :mem_cache_store, Memcached::Rails.new
+
+if ENV['GEMBEAT_TOKEN']
+  config.after_initialize do
+    Thread.new do
+      Gembeat.token = ENV['GEMBEAT_TOKEN']
+      Gembeat.pulse_url = ENV['GEMBEAT_URL']
+      Gembeat.use_ssl = true
+      Gembeat.send_pulse
+    end
+  end
+end

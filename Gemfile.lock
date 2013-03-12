@@ -23,6 +23,7 @@ GEM
     daemons (1.1.8)
     fastthread (1.0.7)
     gem_plugin (0.2.3)
+    gembeat (0.0.1)
     memcached (0.18.0)
     mocha (0.9.8)
       rake
@@ -47,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   context
+  gembeat (~> 0.0.1)
   liquid (= 2.3.0)!
   memcached (= 0.18.0)
   mocha
