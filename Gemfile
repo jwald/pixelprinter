@@ -19,3 +19,4 @@ group :test do
 end
 
 gem 'gembeat', '~> 0.0.1'
+gem 'json'
