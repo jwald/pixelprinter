@@ -6,7 +6,7 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_pixel_printer_session',
-  :secret      => '4650a370ae7bf6c673e463936bd8f70f15af7d6bb4d9aca4e0ffab74700e0a7498dd0e95f30fb8acb46748a9f2b176bf47a4d4c25295b785a80acb48be58642c'
+  :secret      => ENV['SECRET_TOKEN'] || SecureRandom.hex(64)
 }
 
 # Use the database for sessions instead of the cookie-based default,
