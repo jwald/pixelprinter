@@ -97,9 +97,9 @@ class PrintTemplatesController < ApplicationController
   
   def export
     if params[:shop].present? && shop = Shop.find_by_url(params[:shop])
-      render :xml => shop.templates.to_xml(:only => [:name, :body, :default])
+      render :xml => shop.templates.to_xml(:only => [:name, :body, :default]), :status => 200
     else
-      head :forbidden
+      head :not_found
     end
   end
   
