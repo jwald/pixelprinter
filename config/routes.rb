@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'login', :action => 'logout'
 
   map.resources :orders, :only => [:index, :show], :member => {:preview => :get, :print => :post}
+  
+  map.connect 'templates/export', :controller => 'print_templates', :action => 'export'
   map.resources :print_templates, :as => 'templates'
   
   map.connect ':controller/:action/:id'
