@@ -1,5 +1,6 @@
 class PrintTemplatesController < ApplicationController
-  around_filter :shopify_session
+  around_filter :shopify_session, :except => :export
+  before_filter :authenticate, :only => :export
   
   def index
     @tmpls = shop.templates
@@ -91,6 +92,23 @@ class PrintTemplatesController < ApplicationController
     
     render :update do |page|
       page << "$('#template_editor').val(#{@tmpl.body.inspect});"
+    end
+  end
+  
+  def export
+    if params[:shop].present? && shop = Shop.find_by_url(params[:shop])
+      render :xml => shop.templates
+    else
+      head :forbidden
+    end
+  end
+  
+  private
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |user, pass|
+      user == ENV['PIXELPRINTER_EXPORT_USERNAME'] &&
+      pass == ENV['PIXELPRINTER_EXPORT_PASSWORD']
     end
   end
 end
