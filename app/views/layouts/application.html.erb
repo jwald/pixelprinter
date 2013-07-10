@@ -50,5 +50,6 @@
     <div id="flasherrors" style="display:none;"></div>
   </div><!-- wrapper -->
   
+  <%= render 'layouts/order_printer_modal' if @app_shop.try(:templates_exported?) && cookies[:op_modal_closed] != '1' %>
 </body>
 </html>
