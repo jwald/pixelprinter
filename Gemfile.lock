@@ -42,7 +42,7 @@ GEM
       activeresource (= 2.3.18)
       activesupport (= 2.3.18)
       rake (>= 0.8.3)
-    rake (10.0.3)
+    rake (0.8.7)
 
 PLATFORMS
   ruby
@@ -57,3 +57,4 @@ DEPENDENCIES
   mongrel
   mysql
   rails (= 2.3.18)
+  rake (= 0.8.7)
