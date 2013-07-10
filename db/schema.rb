@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090605160611) do
+ActiveRecord::Schema.define(:version => 20130710165325) do
 
   create_table "print_template_versions", :force => true do |t|
     t.integer  "print_template_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20090605160611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+    t.boolean  "templates_exported", :default => false
   end
 
   add_index "shops", ["url"], :name => "index_shops_on_url"
