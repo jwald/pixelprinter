@@ -8,4 +8,8 @@ module ApplicationHelper
   def shopify_order_url(order)
     "#{shop_admin_url}/orders/#{order.id}"
   end
+  
+  def show_order_printer_modal?
+    @app_shop.try(:templates_exported?) && cookies[:op_modal_closed] != '1'
+  end
 end
