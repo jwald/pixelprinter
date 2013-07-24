@@ -11,7 +11,12 @@ class LoginController < ApplicationController
       flash[:error] = "You entered a blank domain, please try again."
       redirect_to(:back)
     else
-      redirect_to ShopifyAPI::Session.new(params[:shop]).create_permission_url
+      if Shop.find_by_url(myshopify_url(params[:shop]))
+        session.delete :new_user
+        redirect_to ShopifyAPI::Session.new(params[:shop]).create_permission_url
+      else
+        block_new_shop
+      end
     end
   end
 
@@ -25,11 +30,13 @@ class LoginController < ApplicationController
     if shopify_session.valid?
       session[:shopify] = shopify_session
       
-      # save shop to local DB
-      @shop = Shop.find_or_create_by_url(shopify_session.url)
-
-      flash[:notice] = "Successfully logged into shopify store."
-      redirect_to session.delete(:return_to) || '/orders'
+      if Shop.find_by_url(shopify_session.url)
+        session.delete :new_user
+        flash[:notice] = "Successfully logged into shopify store."
+        redirect_to session.delete(:return_to) || '/orders'
+      else
+        block_new_shop
+      end
     else
       flash[:error] = "Could not log into Shopify store."
       redirect_to :action => 'index'
@@ -43,4 +50,19 @@ class LoginController < ApplicationController
     redirect_to :action => 'index'
   end
   
+  private
+  
+  def myshopify_url(url)
+    if url =~ /\w+\.myshopify\.com\z/
+      url
+    else
+      "#{url}.myshopify.com"
+    end
+  end
+  
+  def block_new_shop
+    flash[:error] = "Could not create PixelPrinter account."
+    session[:new_user] = true
+    redirect_to :action => 'index'
+  end
 end 
