@@ -21,8 +21,8 @@
 	<![endif]-->
    
   <% javascript_tag do %>
-    <% if flash[:notice] %> window.onload = function() { Messenger.notice(<%= h(flash[:notice]).inspect %>); } <% end %>
-    <% if flash[:error] %>  window.onload = function() { Messenger.error(<%= h(flash[:error]).inspect %>); }   <% end %>
+    <% if flash[:notice] %> window.onload = function() { Messenger.notice(<%= raw flash[:notice].inspect %>); } <% end %>
+    <% if flash[:error] %>  window.onload = function() { Messenger.error(<%= raw flash[:error].inspect %>); }   <% end %>
     
     $(document).ready(function() {
       <%= yield :javascript %>
