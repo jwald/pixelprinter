@@ -16,5 +16,5 @@
   </div>
 </div>
 <script>
-$(function(){$("#op-modal .close").click(function(e){e.preventDefault(),document.cookie="op_modal_closed=1",$("#op-modal, #op-modal-overlay").hide()}),$("#op-modal .op-link").click(function(){document.cookie="op_modal_closed=1"}),$("#op-modal-overlay").click(function(){$("#op-modal, #op-modal-overlay").hide()})});
+$(function(){$("#op-modal .close").click(function(e){e.preventDefault(),document.cookie="op_modal_closed=1; expires="+(new Date()).getTime()+8*60*60*1000,$("#op-modal, #op-modal-overlay").hide()}),$("#op-modal .op-link").click(function(){document.cookie="op_modal_closed=1"}),$("#op-modal-overlay").click(function(){$("#op-modal, #op-modal-overlay").hide()})});
 </script>
