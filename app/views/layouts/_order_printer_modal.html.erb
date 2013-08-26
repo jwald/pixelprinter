@@ -16,5 +16,5 @@
   </div>
 </div>
 <script>
-$(function(){function expire_date(){var e=new Date();e.setTime(e.getTime()+28800000);return e.toGMTString()};$("#op-modal .close").click(function(e){e.preventDefault(),document.cookie="op_modal_closed=1; expires="+expire_date(),$("#op-modal, #op-modal-overlay").hide()}),$("#op-modal .op-link").click(function(){document.cookie="op_modal_closed=1; expires="+expire_date()}),$("#op-modal-overlay").click(function(){$("#op-modal, #op-modal-overlay").hide()})});
+$(function(){function expire_date(){var e=new Date();e.setTime(e.getTime()+28800000);return e.toGMTString()};$("#op-modal .close").click(function(e){e.preventDefault(),document.cookie="op_modal_hidden=1; expires="+expire_date(),$("#op-modal, #op-modal-overlay").hide()}),$("#op-modal .op-link").click(function(){document.cookie="op_modal_hidden=1; expires="+expire_date()}),$("#op-modal-overlay").click(function(){$("#op-modal, #op-modal-overlay").hide()})});
 </script>

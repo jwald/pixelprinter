@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def show_order_printer_modal?
-    session[:new_user] || cookies[:op_modal_closed] != '1'
+    session[:new_user] || cookies[:op_modal_hidden] != '1'
   end
 end
