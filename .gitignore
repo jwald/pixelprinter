@@ -5,3 +5,4 @@ config/shopify.yml
 db/backup/*
 .bundle
 .rbenv-version
+.ruby-version
