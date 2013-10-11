@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect 'templates/export', :controller => 'print_templates', :action => 'export'
-  
+  map.all '*', :controller => 'login', :action => 'byebye'
+
   # map.root :controller => 'login'
   # map.logout '/logout', :controller => 'login', :action => 'logout'
   # 
